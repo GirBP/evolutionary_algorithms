@@ -1,0 +1,27 @@
+# Мінімальний набір залежностей для відтворення основних експериментів
+# Python >= 3.10, PyTorch з MPS-підтримкою (Apple Silicon)
+# Для повного замороження версій див. requirements-full.txt
+
+# Основа
+numpy
+torch
+torchvision
+scipy
+pandas
+joblib
+
+# ML / наукова інфраструктура
+scikit-learn
+cma                 # CMA-ES (pycma)
+
+# Візуалізація
+matplotlib
+seaborn
+
+# Опційне (для конкретних експериментів)
+# scikit-optimize    # Bayesian baselines (Ex_HPO_Final)
+# transformers       # ENT-FT якщо порівнюєте з LLM merge
+# accelerate         # ENT великі моделі
+
+# Окремий пакет CMA-ES (CyberAgent) — бейзлайн methods/cmaes_pure.py
+cmaes

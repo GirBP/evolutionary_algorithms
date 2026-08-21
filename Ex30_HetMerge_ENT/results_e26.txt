@@ -1,0 +1,29 @@
+MLP-A:0.495 MLP-B:0.405 CNN-A:0.449 CNN-B:0.381
+
+MLP+MLP:
+  sA=[64, 64] sB=[64, 64]
+  Gen 0: fit=0.5009
+  Gen 15: fit=0.5866
+  Gen 29: fit=0.5866
+  acc=0.701 A=0.657 B=0.744 bal=0.883 ok=10/10 min=0.438
+
+CNN+CNN:
+  sA=[64, 64] sB=[64, 64]
+  Gen 0: fit=0.1996
+  Gen 15: fit=0.2711
+  Gen 29: fit=0.2711
+  acc=0.444 A=0.497 B=0.389 bal=0.783 ok=6/10 min=0.000
+
+MLP+CNN:
+  sA=[64, 64] sB=[64, 64]
+  Gen 0: fit=0.3705
+  Gen 15: fit=0.3896
+  Gen 29: fit=0.3940
+  acc=0.507 A=0.512 B=0.521 bal=0.983 ok=8/10 min=0.190
+
+CNN+MLP:
+  sA=[64, 64] sB=[64, 64]
+  Gen 0: fit=0.2719
+  Gen 15: fit=0.3140
+  Gen 29: fit=0.3140
+  acc=0.481 A=0.590 B=0.374 bal=0.633 ok=6/10 min=0.088

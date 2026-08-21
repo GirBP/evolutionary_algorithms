@@ -1,0 +1,35 @@
+=== Running seed 42 ===
+seed=42: ENT ok=5/10 bal=0.893 min=0.020 acc=0.263 | Avg ok=2 TA ok=3 Sak ok=5 | 107s
+metric_ent_ok: 5
+metric_ent_bal: 0.8929
+metric_ent_min: 0.0204
+Done!
+
+=== Running seed 123 ===
+seed=123: ENT ok=6/10 bal=0.694 min=0.041 acc=0.308 | Avg ok=6 TA ok=5 Sak ok=6 | 107s
+metric_ent_ok: 6
+metric_ent_bal: 0.6942
+metric_ent_min: 0.0408
+Done!
+
+=== Running seed 456 ===
+seed=456: ENT ok=7/10 bal=0.938 min=0.049 acc=0.303 | Avg ok=4 TA ok=5 Sak ok=6 | 108s
+metric_ent_ok: 7
+metric_ent_bal: 0.9377
+metric_ent_min: 0.0493
+Done!
+
+=== Running seed 789 ===
+seed=789: ENT ok=6/10 bal=0.951 min=0.000 acc=0.310 | Avg ok=7 TA ok=6 Sak ok=6 | 110s
+metric_ent_ok: 6
+metric_ent_bal: 0.9514
+metric_ent_min: 0.0
+Done!
+
+=== Running seed 1000 ===
+seed=1000: ENT ok=5/10 bal=0.848 min=0.000 acc=0.254 | Avg ok=3 TA ok=6 Sak ok=5 | 110s
+metric_ent_ok: 5
+metric_ent_bal: 0.8484
+metric_ent_min: 0.0
+Done!
+

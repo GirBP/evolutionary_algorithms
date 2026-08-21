@@ -1,0 +1,143 @@
+{
+  "exploration": 2,
+  "tier": 4,
+  "break_detected": false,
+  "results": [
+    {
+      "dataset": "highdim",
+      "seed": 42,
+      "method": "gfcs",
+      "teacher_f1": 0.9213917101031168,
+      "sparse_f1": 0.858162231377938,
+      "pre_ft_f1": 0.7873847203798148,
+      "final_f1": 0.8903462249495788,
+      "delta_f1": 0.03218399357164081,
+      "compact_params": 10559,
+      "compression": 3.8068945922909365,
+      "speedup": 1.035404008302607,
+      "quality_ok": true,
+      "speedup_ok": "True",
+      "sparsity": 0.6999849276527331,
+      "merged_hiddens": [
+        76,
+        64,
+        25
+      ],
+      "convert_time": 0.18622732162475586
+    },
+    {
+      "dataset": "highdim",
+      "seed": 42,
+      "method": "neuron_removal",
+      "sparse_f1": 0.858162231377938,
+      "final_f1": 0.8867282537220728,
+      "delta_f1": 0.028566022344134745,
+      "compact_params": 26777,
+      "compression": 1.5011763827165105,
+      "speedup": 1.0157388435965238,
+      "sparsity": 0.6999849276527331
+    },
+    {
+      "dataset": "highdim",
+      "seed": 123,
+      "method": "gfcs",
+      "teacher_f1": 0.9085153177703982,
+      "sparse_f1": 0.8816967809549474,
+      "pre_ft_f1": 0.7303794703794704,
+      "final_f1": 0.9117710794770219,
+      "delta_f1": 0.03007429852207444,
+      "compact_params": 9724,
+      "compression": 4.133792677910325,
+      "speedup": 1.042347302062939,
+      "quality_ok": true,
+      "speedup_ok": "True",
+      "sparsity": 0.6499949758842444,
+      "merged_hiddens": [
+        76,
+        59,
+        20
+      ],
+      "convert_time": 0.17949604988098145
+    },
+    {
+      "dataset": "highdim",
+      "seed": 123,
+      "method": "neuron_removal",
+      "sparse_f1": 0.8816967809549474,
+      "final_f1": 0.9116210709205728,
+      "delta_f1": 0.02992428996562535,
+      "compact_params": 24659,
+      "compression": 1.6301147654000567,
+      "speedup": 1.0336870747118212,
+      "sparsity": 0.6499949758842444
+    },
+    {
+      "dataset": "sequence_cls",
+      "seed": 42,
+      "method": "gfcs",
+      "teacher_f1": 0.9394877831449212,
+      "sparse_f1": 0.8246782481554542,
+      "pre_ft_f1": 0.77272156852379,
+      "final_f1": 0.8768096420173775,
+      "delta_f1": 0.052131393861923336,
+      "compact_params": 2327,
+      "compression": 15.348517404383326,
+      "speedup": 1.0512596821485019,
+      "quality_ok": true,
+      "speedup_ok": "True",
+      "sparsity": 0.899994338768116,
+      "merged_hiddens": [
+        26,
+        37,
+        21
+      ],
+      "convert_time": 0.21269989013671875
+    },
+    {
+      "dataset": "sequence_cls",
+      "seed": 42,
+      "method": "neuron_removal",
+      "sparse_f1": 0.8246782481554542,
+      "final_f1": 0.9009419898336437,
+      "delta_f1": 0.0762637416781895,
+      "compact_params": 8983,
+      "compression": 3.975954580874986,
+      "speedup": 1.017862641068996,
+      "sparsity": 0.899994338768116
+    },
+    {
+      "dataset": "sequence_cls",
+      "seed": 123,
+      "method": "gfcs",
+      "teacher_f1": 0.9483737142517543,
+      "sparse_f1": 0.8927790730687174,
+      "pre_ft_f1": 0.880586687809111,
+      "final_f1": 0.9065660959415087,
+      "delta_f1": 0.013787022872791321,
+      "compact_params": 7666,
+      "compression": 4.659013827289329,
+      "speedup": 1.0203344041458215,
+      "quality_ok": true,
+      "speedup_ok": "True",
+      "sparsity": 0.8499773550724637,
+      "merged_hiddens": [
+        55,
+        72,
+        35
+      ],
+      "convert_time": 0.1825251579284668
+    },
+    {
+      "dataset": "sequence_cls",
+      "seed": 123,
+      "method": "neuron_removal",
+      "sparse_f1": 0.8927790730687174,
+      "final_f1": 0.9354580073971791,
+      "delta_f1": 0.042678934328461704,
+      "compact_params": 21401,
+      "compression": 1.6688939769169664,
+      "speedup": 1.0230781184243938,
+      "sparsity": 0.8499773550724637
+    }
+  ]
+}

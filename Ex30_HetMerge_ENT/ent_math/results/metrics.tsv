@@ -1,0 +1,16 @@
+E_id	branch	fidelity	metric	value	time_s	status	lesson
+E01	1.h1_align	L1	h1_best_retained	1	9	keep	H1 PASS. R²=0.93. 1 adapted class works perfectly. Scale imbalance in FC.
+E02	1.h1_align	L2	h1_optimize	2	14	discard	H1 optimize 2/4 (A only). FC retrain 0/4. g_A features don't encode B. KILL H1.
+E03	2.h3_backbone	L2	h3_best_retained	0	20	discard	KILLED H3. 0/4 all variants. Backbones too specialized. Pseudo-labels conflict.
+E04	3.h4_progressive	L2	h4_best_retained	2	83	keep	H4 PASS kill. 2/4 — A retained, B still drops 75-89%. Progressive better than naive but seesaw persists.
+E05	4.h2_full_kd	L2	h2_best_retained	2	119	keep	H2 full KD=2/4. SUPERVISED CEILING=1/4! Proof: model capacity is bottleneck, not KD.
+E06	5.rn18_kd	L3	rn18_kd_retained	-1	120	discard	Timeout — RN18 KD too slow for 120s. Reduce transfer set.
+E07	5.rn18_kd_lite	L3	rn18_retained	0	183	discard	RN18 KD 0/10. Drops 15-40%. Under-trained (only 15ep on 3k). Need 50+ ep.
+E08	5.rn18_kd_full	L3	rn18_retained	5	666	keep	A-only KD=5/10! Perfect A retention. Phase 2 never ran (time). Need MPS for teacher logits.
+E09	5.rn18_kd_v2	L3	rn18_retained	2	630	keep	RN18 KD: Phase1=5/10(A perfect) → Phase2 seesaw → 2/10. w_B=2 too aggressive.
+E10	5.rn18_simult	L3	rn18_simult_ret	1	628	keep	RN18 simultaneous KD: ep5=2/10 → ep10=3/10 → final 1/10. Mean drop 16.4%. Need more epochs.
+E11	4.rn18_frozen	L3	rn18_frozen_ret	3	385	keep	Frozen backbone: FC=0/10. Stage2 layer4+FC=3/10(peak 4/10 at ep5). A retained, B fails.
+E12	5.rn18_2stage	L3	rn18_2stage_ret	4	599	keep	BEST: 4/10! 2-stage: FC(200ep)+full(7ep diff LR). Improving monotonically. A=4/5. B=0/5.
+E13	6.rn18_2stage_v2	L3	rn18_2stage_v2	4	1184	discard	4/10 same as E12. w_B=1.5 SLOWER (ep14 vs ep6). B=0/5 persistent. Need class-selective KD.
+E14	4.rn18_conf_kd	L3	rn18_conf_ret	1	1172	discard	WORSE: 1/10. Pseudo-label CE destroys signal. Conf weighting useless (5-class always confident).
+E15	4.rn18_e12_long	L3	rn18_e12_long	4	1155	keep	SATURATION at 4/10. ep6→ep12 no change. B=0/5 locked. Structural limit.

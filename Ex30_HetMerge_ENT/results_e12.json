@@ -1,0 +1,20 @@
+[
+  {
+    "pair": "A_vs_B",
+    "acc_A": 0.35,
+    "acc_B": 0.552,
+    "merged": 0.526,
+    "retention": 0.9529,
+    "gap": 0.048,
+    "dims": 92
+  },
+  {
+    "pair": "A_vs_C",
+    "acc_A": 0.09,
+    "acc_B": 0.214,
+    "merged": 0.234,
+    "retention": 1.0935,
+    "gap": 0.062,
+    "dims": 76
+  }
+]

@@ -1,0 +1,48 @@
+================================================================================
+  E07: PCMA vs Baselines — Comprehensive Comparison
+================================================================================
+
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+  MNIST
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+
+  ── 3L: A=[784, 128, 64, 10] vs B=[784, 256, 128, 10] ──
+    s=42: A=0.895 B=0.905 | Trunc=0.548 Rand=0.730 Proc=0.242 PCMA_f=0.982 PCMA_α=0.999
+    s=123: A=0.893 B=0.896 | Trunc=0.508 Rand=0.852 Proc=0.237 PCMA_f=0.991 PCMA_α=1.003
+    s=777: A=0.900 B=0.906 | Trunc=0.497 Rand=0.773 Proc=0.232 PCMA_f=0.979 PCMA_α=0.996
+
+  ── 5L: A=[784, 256, 128, 64, 32, 10] vs B=[784, 512, 256, 128, 64, 10] ──
+Traceback (most recent call last):
+  File "/Users/bibo/Desktop/cs_dev/Ex30_HetMerge/e07_baselines.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "/Users/bibo/Desktop/cs_dev/Ex30_HetMerge/e07_baselines.py", line 187, in main
+    mB = train(aB, X_tr, y_tr, seed)
+  File "/Users/bibo/Desktop/cs_dev/Ex30_HetMerge/e07_baselines.py", line 51, in train
+    l = nn.CrossEntropyLoss()(m(X), y); opt.zero_grad(); l.backward(); opt.step()
+                                                         ~~~~~~~~~~^^
+  File "/Users/bibo/Desktop/cs_dev/.venv/lib/python3.14/site-packages/torch/_tensor.py", line 630, in backward
+    torch.autograd.backward(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        self, gradient, retain_graph, create_graph, inputs=inputs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/bibo/Desktop/cs_dev/.venv/lib/python3.14/site-packages/torch/autograd/__init__.py", line 364, in backward
+    _engine_run_backward(
+    ~~~~~~~~~~~~~~~~~~~~^
+        tensors,
+        ^^^^^^^^
+    ...<5 lines>...
+        accumulate_grad=True,
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/bibo/Desktop/cs_dev/.venv/lib/python3.14/site-packages/torch/autograd/graph.py", line 865, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        t_outputs, *args, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )  # Calls into the C++ engine to run the backward pass
+    ^
+KeyboardInterrupt

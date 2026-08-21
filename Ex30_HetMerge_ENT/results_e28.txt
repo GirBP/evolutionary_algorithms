@@ -1,0 +1,34 @@
+Parents: MLP-A:0.495 MLP-B:0.405 CNN-A:0.449 CNN-B:0.381
+MLP+MLP: acc=0.652 A=0.688 B=0.615 bal=0.894 ok=10/10 projA=RFF0.05 projB=LSQ
+  0: par=0.966 ent=0.800 ✅
+  1: par=0.970 ent=0.932 ✅
+  2: par=0.868 ent=0.502 ✅
+  3: par=0.942 ent=0.556 ✅
+  4: par=0.963 ent=0.650 ✅
+  5: par=0.799 ent=0.609 ✅
+  6: par=0.961 ent=0.787 ✅
+  7: par=0.849 ent=0.566 ✅
+  8: par=0.786 ent=0.453 ✅
+  9: par=0.876 ent=0.660 ✅
+CNN+CNN: acc=0.495 A=0.609 B=0.364 bal=0.598 ok=7/10 projA=Direct projB=Direct
+  0: par=0.926 ent=0.897 ✅
+  1: par=0.962 ent=0.876 ✅
+  2: par=0.612 ent=0.447 ✅
+  3: par=0.947 ent=0.000 ❌
+  4: par=0.839 ent=0.825 ✅
+  5: par=0.693 ent=0.000 ❌
+  6: par=0.848 ent=0.511 ✅
+  7: par=0.805 ent=0.634 ✅
+  8: par=0.818 ent=0.677 ✅
+  9: par=0.851 ent=0.000 ❌
+MLP+CNN: acc=0.586 A=0.622 B=0.556 bal=0.894 ok=10/10 projA=LSQ projB=Direct
+  0: par=0.966 ent=0.931 ✅
+  1: par=0.970 ent=0.906 ✅
+  2: par=0.868 ent=0.484 ✅
+  3: par=0.942 ent=0.411 ✅
+  4: par=0.963 ent=0.378 ❌
+  5: par=0.693 ent=0.687 ✅
+  6: par=0.848 ent=0.545 ✅
+  7: par=0.805 ent=0.434 ✅
+  8: par=0.818 ent=0.490 ✅
+  9: par=0.851 ent=0.624 ✅

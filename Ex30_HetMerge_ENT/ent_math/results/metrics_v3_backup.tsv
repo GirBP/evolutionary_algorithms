@@ -1,0 +1,7 @@
+E_id	branch	fidelity	metric	value	time_s	status	lesson
+E01	1.toy_align	L2	aligned_bn_ok	3	20	keep	Align+BN=3/4 vs Unaligned=1/4. BN reset critical. Target MET.
+E02	2.ea_toy	L2	ea_ok	4	61	keep	EA → 4/4 (from 3/4 fixed). Balanced classes. CMA 3 gens, 42 evals.
+E03	3.tv_analysis	L2	tvmerge_retained	0	24	discard	Task vectors ~orthogonal (cos≈0.01-0.16). But naive TA=0/4. BN=1/4. Need EA.
+E04	4.dave_ea	L2	dave_acc_corr	0.13	81	discard	DAVE does NOT correlate (r=0.13 p=0.57). EA+DAVE=1/4. Collapsed to sA=14 sB=0.3.
+E05	5.balance_proxy	L2	balance_min_corr	-0.44	96	discard	Balance anti-correlates (r=-0.44). EA+balance=1/4. Data-free proxies fundamentally insufficient for toy model.
+E06	6.tv_real_ea	L2	tv_ea_retained	1	61	discard	TV+real BN+EA=1/4. Base model too weak (5ep). Alignment approach (E02) 4× better.

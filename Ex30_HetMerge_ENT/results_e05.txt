@@ -1,0 +1,99 @@
+===========================================================================
+  E05: Push breaking point — 5 strategies × 3 depths
+===========================================================================
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  7 layers | A=[784, 256, 128, 64, 32, 32, 32, 10] | B=[784, 512, 256, 128, 64, 64, 64, 10]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  seed=42: A=0.722 B=0.878 best=0.878
+    baseline      : acc=0.449 ret=0.511 ❌ dims=544 3.9s
+    S2_budget     : acc=0.721 ret=0.821 ✅ dims=544 11.9s
+    S3_progress   : acc=0.116 ret=0.132 ❌ dims=544 0.4s
+    S4_alpha      : acc=0.757 ret=0.862 ✅ dims=551 5.1s
+    S5_combined   : acc=0.754 ret=0.859 ✅ dims=551 8.9s
+
+  seed=123: A=0.720 B=0.826 best=0.826
+    baseline      : acc=0.678 ret=0.821 ✅ dims=544 2.9s
+    S2_budget     : acc=0.719 ret=0.870 ✅ dims=544 10.9s
+    S3_progress   : acc=0.697 ret=0.844 ✅ dims=544 10.9s
+    S4_alpha      : acc=0.742 ret=0.898 ✅ dims=551 5.6s
+    S5_combined   : acc=0.742 ret=0.898 ✅ dims=551 16.6s
+
+  seed=777: A=0.810 B=0.862 best=0.862
+    baseline      : acc=0.531 ret=0.616 🟡 dims=544 2.8s
+    S2_budget     : acc=0.782 ret=0.907 ✅ dims=544 11.2s
+    S3_progress   : acc=0.678 ret=0.787 🟡 dims=544 11.1s
+    S4_alpha      : acc=0.832 ret=0.965 ✅ dims=551 5.2s
+    S5_combined   : acc=0.826 ret=0.958 ✅ dims=551 14.9s
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  8 layers | A=[784, 256, 128, 64, 32, 32, 32, 32, 10] | B=[784, 512, 256, 128, 64, 64, 64, 64, 10]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  seed=42: A=0.416 B=0.801 best=0.801
+    baseline      : acc=0.419 ret=0.523 ❌ dims=576 2.9s
+    S2_budget     : acc=0.547 ret=0.683 🟡 dims=576 10.8s
+    S3_progress   : acc=0.373 ret=0.466 ❌ dims=576 11.9s
+    S4_alpha      : acc=0.500 ret=0.624 🟡 dims=584 5.2s
+    S5_combined   : acc=0.167 ret=0.208 ❌ dims=584 15.8s
+
+  seed=123: A=0.677 B=0.815 best=0.815
+    baseline      : acc=0.584 ret=0.717 🟡 dims=576 2.9s
+    S2_budget     : acc=0.721 ret=0.885 ✅ dims=576 10.9s
+    S3_progress   : acc=0.524 ret=0.643 🟡 dims=576 8.3s
+    S4_alpha      : acc=0.724 ret=0.888 ✅ dims=584 6.5s
+    S5_combined   : acc=0.728 ret=0.893 ✅ dims=584 14.1s
+
+  seed=777: A=0.695 B=0.811 best=0.811
+    baseline      : acc=0.605 ret=0.746 🟡 dims=576 3.6s
+    S2_budget     : acc=0.775 ret=0.956 ✅ dims=576 11.2s
+    S3_progress   : acc=0.087 ret=0.107 ❌ dims=576 0.4s
+    S4_alpha      : acc=0.728 ret=0.898 ✅ dims=584 5.3s
+    S5_combined   : acc=0.739 ret=0.911 ✅ dims=584 9.2s
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  9 layers | A=[784, 256, 128, 64, 32, 32, 32, 32, 32, 10] | B=[784, 512, 256, 128, 64, 64, 64, 64, 64, 10]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  seed=42: A=0.481 B=0.450 best=0.481
+    baseline      : acc=0.411 ret=0.854 ✅ dims=608 3.2s
+    S2_budget     : acc=0.455 ret=0.946 ✅ dims=608 11.2s
+    S3_progress   : acc=0.300 ret=0.624 🟡 dims=608 13.9s
+    S4_alpha      : acc=0.572 ret=1.189 ✅ dims=617 5.3s
+    S5_combined   : acc=0.475 ret=0.988 ✅ dims=617 18.8s
+
+  seed=123: A=0.422 B=0.438 best=0.438
+    baseline      : acc=0.396 ret=0.904 ✅ dims=608 3.3s
+    S2_budget     : acc=0.425 ret=0.970 ✅ dims=608 11.4s
+    S3_progress   : acc=0.419 ret=0.957 ✅ dims=608 14.1s
+    S4_alpha      : acc=0.544 ret=1.242 ✅ dims=617 5.6s
+    S5_combined   : acc=0.530 ret=1.210 ✅ dims=617 18.1s
+
+  seed=777: A=0.652 B=0.665 best=0.665
+    baseline      : acc=0.515 ret=0.774 🟡 dims=608 3.1s
+    S2_budget     : acc=0.600 ret=0.902 ✅ dims=608 12.8s
+    S3_progress   : acc=0.285 ret=0.429 ❌ dims=608 4.6s
+    S4_alpha      : acc=0.644 ret=0.968 ✅ dims=617 5.8s
+    S5_combined   : acc=0.657 ret=0.988 ✅ dims=617 11.4s
+
+===========================================================================
+  SUMMARY: Best strategy per depth
+===========================================================================
+
+  Depth  Strategy         Avg ret     Min     Max   Status
+  ───────────────────────────────────────────────────────
+      7  S4_alpha          0.9086  0.8622  0.9652        ✅
+      8  S2_budget         0.8411  0.6829  0.9556        ✅
+      9  S4_alpha          1.1332  0.9684  1.2420        ✅
+
+  Full comparison (avg retention):
+                  7L  8L  9L
+  baseline        0.649  0.662  0.844
+  S2_budget       0.866  0.841  0.939
+  S3_progress     0.587  0.405  0.670
+  S4_alpha        0.909  0.803  1.133
+  S5_combined     0.905  0.671  1.062
+
+  Time: 394.9s
+  Saved: results_e05.json

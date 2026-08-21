@@ -1,0 +1,23 @@
+=== Coverage ===
+datasets present : ['blobs', 'circles', 'cnn', 'moons', 'resnet', 'spirals']
+methods present  : ['Magnitude', 'RIA (SOTA)', 'SparseGPT (SOTA)', 'TESA-26', 'WANDA (SOTA)']
+pairs (datasets×sparsity) with all 5 methods: 24
+
+=== Mean ranks (lower = better) ===
+  TESA-26                2.04
+  WANDA (SOTA)           2.75
+  Magnitude              3.17
+  SparseGPT (SOTA)       3.40
+  RIA (SOTA)             3.65
+
+Friedman chi2 = 18.050, p = 0.001207
+Nemenyi CD (k=5, N=24, α=0.05) = 1.245
+
+=== Mean F1 at 95-97% sparsity ===
+  TESA-26               0.757
+  Magnitude             0.568
+  WANDA (SOTA)          0.713
+  SparseGPT (SOTA)      0.602
+  RIA (SOTA)            0.540
+
+[OK] figs/new_fig_2_10_ex08_cd_5methods.png

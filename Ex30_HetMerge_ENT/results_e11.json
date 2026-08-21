@@ -1,0 +1,77 @@
+[
+  {
+    "name": "CNN+MLP_same128",
+    "cnn_acc": 0.632,
+    "mlp_acc": 0.761,
+    "merged_acc": 0.673,
+    "retention": 0.8844,
+    "gen_gap": 0.044,
+    "alphas": [
+      0.437,
+      0.419
+    ],
+    "per_class_merged": [
+      0.4706,
+      0.9127,
+      0.8793,
+      0.8505,
+      0.6273,
+      0.3103,
+      0.8506,
+      0.6162,
+      0.3483,
+      0.6702
+    ],
+    "classes_preserved": 8
+  },
+  {
+    "name": "CNN+MLP_diff64",
+    "cnn_acc": 0.631,
+    "mlp_acc": 0.581,
+    "merged_acc": 0.678,
+    "retention": 1.0745,
+    "gen_gap": 0.039,
+    "alphas": [
+      0.683,
+      0.225
+    ],
+    "per_class_merged": [
+      0.5529,
+      0.9524,
+      0.5172,
+      0.8318,
+      0.7636,
+      0.5172,
+      0.8621,
+      0.6263,
+      0.2584,
+      0.7766
+    ],
+    "classes_preserved": 7
+  },
+  {
+    "name": "CNN+MLP_wide",
+    "cnn_acc": 0.631,
+    "mlp_acc": 0.777,
+    "merged_acc": 0.736,
+    "retention": 0.9472,
+    "gen_gap": 0.012,
+    "alphas": [
+      0.109,
+      0.145
+    ],
+    "per_class_merged": [
+      0.5294,
+      0.9683,
+      0.75,
+      0.8598,
+      0.5727,
+      0.4828,
+      0.8391,
+      0.7172,
+      0.7528,
+      0.7872
+    ],
+    "classes_preserved": 7
+  }
+]

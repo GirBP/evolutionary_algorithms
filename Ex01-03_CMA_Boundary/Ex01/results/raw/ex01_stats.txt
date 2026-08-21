@@ -1,0 +1,18 @@
+Ex01 — статистична оцінка
+
+Тест Фрідмана (блок = Trial). Метрика: Final Loss (менше = краще).
+
+Friedman χ²=56.5800, p=0.0000
+
+Effect size (сумарний): Kendall's W (конкорданс рангів, 0–1):
+  W = 0.9430
+
+Effect size (попарно): Vargha-Delaney A (ймовірність, що метод A має нижчу втрату за B; A>0.5 ⇒ A краще):
+  A(AdaBelief (MR), AdamW (MR)) = 0.0000
+  A(AdaBelief (MR), CMA-ES (EA)) = 0.0000
+  A(AdaBelief (MR), Random Search) = 0.0000
+  A(AdamW (MR), CMA-ES (EA)) = 0.0775
+  A(AdamW (MR), Random Search) = 0.9300
+  A(CMA-ES (EA), Random Search) = 1.0000
+
+Пост-хок Немені: CD (α=0.05) = 1.4832

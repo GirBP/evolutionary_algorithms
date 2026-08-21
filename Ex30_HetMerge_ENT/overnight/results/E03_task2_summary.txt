@@ -1,0 +1,9 @@
+CIFAR-10 Summary (5 seeds):
+  Average : acc=0.252±0.050 bal=0.392±0.187 ok=4.4±1.9 min=0.000
+  TA      : acc=0.279±0.044 bal=0.671±0.139 ok=5.0±1.1 min=0.007
+  Sakana  : acc=0.283±0.015 bal=0.381±0.241 ok=5.6±0.5 min=0.001
+  ENT     : acc=0.288±0.024 bal=0.865±0.093 ok=5.8±0.7 min=0.022
+  ENT vs Average: bal p=0.0107 ok p=0.1599
+  ENT vs TA: bal p=0.0778 ok p=0.2420
+  ENT vs Sakana: bal p=0.0357 ok p=0.3739
+  ENT ok range: 5–7

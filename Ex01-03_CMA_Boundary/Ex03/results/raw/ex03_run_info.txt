@@ -1,0 +1,9 @@
+Ex03 — протокол запуску (конфігурація, з якої побудовані графіки та таблиці)
+
+Файл даних: ex03_data_n5.json
+Режим: experiment
+Кількість прогонів на метод (n_runs): 5
+Бюджет RCU на run: 3000
+Набори даних: ['moons', 'classification20', 'digits']
+Методи: ['Adam', 'CMA-ES', 'L-SHADE', 'CLPSO', 'RTS', 'RS']
+seed_base: 42

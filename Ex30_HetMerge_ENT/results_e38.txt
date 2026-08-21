@@ -1,0 +1,54 @@
+======================================================================
+E38: Resource Usage + Remaining Weakness Analysis
+======================================================================
+
+======================================================================
+PART 1: RESOURCE USAGE (MNIST MLP)
+======================================================================
+
+  Training costs:
+    Base pre-train (5 ep): 0.04s
+    Fine-tune A+B (15 ep each): 0.13s
+    Parent A: 0.503, Parent B: 0.419
+
+  Merge costs:
+    Average merge: 0.64ms
+    TIES merge: 4.87ms
+    ENT total: 2.00s
+      virt2L extraction: 214.8ms
+      EA search (pop=20, gen=30): 1.78s = 1779ms
+      EA evaluations: 600=600
+
+  Inference costs (1000 samples):
+    Parent A        0.34ms  params=109,386  size=427.3KB
+    Parent B        0.33ms  params=109,386  size=427.3KB
+    Average         0.33ms  params=109,386  size=427.3KB
+    ENT             0.37ms  params=98,237  size=383.7KB
+
+======================================================================
+PART 2: MULTI-SEED STABILITY (3 seeds)
+======================================================================
+  Seed 42: ENT acc=0.796 bal=0.939 ok=10/10 | TIES acc=0.657 bal=0.823 ok=9/10
+  Seed 123: ENT acc=0.750 bal=0.885 ok=10/10 | TIES acc=0.589 bal=0.520 ok=7/10
+  Seed 7: ENT acc=0.779 bal=0.920 ok=10/10 | TIES acc=0.616 bal=0.978 ok=8/10
+
+  Summary (3 seeds):
+    ENT:  acc=0.775±0.019  bal=0.915±0.022  ok=10.0±0.0
+    TIES: acc=0.621±0.028  bal=0.774±0.190  ok=8.0±0.8
+    ENT > TIES on all seeds: True
+    ENT 10/10 on all seeds: True
+
+======================================================================
+RESOURCE USAGE SUMMARY
+======================================================================
+  Method            Merge time    Acc    Bal    OK   Params     Size
+  --------------- ------------ ------ ------ ----- -------- --------
+  Average                0.6ms  0.592  0.595   6/10  109,386        —
+  TIES                   4.9ms  0.657  0.823   9/10  109,386        —
+  ENT                     2.0s  0.796  0.939  10/10   98,237 383.7KB
+
+  ENT breakdown:
+    virt2L projection: 214.8ms
+    EA search: 1.78s (600 evaluations)
+    Single model eval: 3.0ms
+    Inference (post-merge): same as parent (~ms)

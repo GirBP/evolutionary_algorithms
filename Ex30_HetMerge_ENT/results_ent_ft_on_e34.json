@@ -1,0 +1,106 @@
+{
+  "config": {
+    "seed": 42,
+    "arch": [
+      784,
+      128,
+      64,
+      10
+    ],
+    "n_train": 20000,
+    "n_test": 2000,
+    "ea": {
+      "pop_size": 20,
+      "n_gen": 30,
+      "weights_w1_w2_w3_w4": [
+        0.4,
+        0.4,
+        0.1,
+        0.1
+      ]
+    },
+    "calibration": {
+      "formulas": "4.7-4.9 (підрозд. 4.3.1)",
+      "calibration_set": "Xv — валідаційна вибірка e34_benchmark.py (EA-валідація ENT), n=3000, idx[15000:18000] з randperm(20000, seed=0), 15% n_train",
+      "logistic_regression": {
+        "solver": "lbfgs",
+        "C": 1.0,
+        "class_weight": "balanced",
+        "max_iter": 500
+      },
+      "sample_weight": "1/count(клас), нормовано на суму ваг = n"
+    }
+  },
+  "champion_verification": {
+    "source_file": "results_e34.json",
+    "target_acc": 0.749,
+    "target_bal": 0.9812,
+    "target_min": 0.4977,
+    "computed_acc": 0.749,
+    "computed_bal": 0.981,
+    "computed_min": 0.498,
+    "matched": true
+  },
+  "before_calibration": {
+    "accuracy": 0.7490000128746033,
+    "per_class": {
+      "0": 0.9828571677207947,
+      "1": 0.94017094373703,
+      "2": 0.7077625393867493,
+      "3": 0.6666666865348816,
+      "4": 0.4976958632469177,
+      "5": 0.8770949840545654,
+      "6": 0.7415730357170105,
+      "7": 0.785365879535675,
+      "8": 0.5208333134651184,
+      "9": 0.7989690899848938
+    },
+    "balance": {
+      "min_class_acc": 0.4976958632469177,
+      "max_class_acc": 0.9828571677207947,
+      "per_class_balance_min_over_max": 0.5063765922377653,
+      "group_a_mean_acc": 0.7590306401252747,
+      "group_b_mean_acc": 0.7447672605514526,
+      "group_balance_min_over_max": 0.9812084271440373,
+      "classes_recognized": 10
+    },
+    "compression_ratio": 0.1055,
+    "ea_fitness": 0.6330508077144623
+  },
+  "after_calibration_ent_ft": {
+    "accuracy": 0.8600000143051147,
+    "per_class": {
+      "0": 0.9599999785423279,
+      "1": 0.9615384340286255,
+      "2": 0.8310502171516418,
+      "3": 0.8502415418624878,
+      "4": 0.8663594722747803,
+      "5": 0.826815664768219,
+      "6": 0.8595505356788635,
+      "7": 0.8048780560493469,
+      "8": 0.7708333134651184,
+      "9": 0.8608247637748718
+    },
+    "balance": {
+      "min_class_acc": 0.7708333134651184,
+      "max_class_acc": 0.9615384340286255,
+      "per_class_balance_min_over_max": 0.8016666689395905,
+      "group_a_mean_acc": 0.8938379287719727,
+      "group_b_mean_acc": 0.8245804667472839,
+      "group_balance_min_over_max": 0.9225167563432441,
+      "classes_recognized": 10
+    }
+  },
+  "delta": {
+    "accuracy": 0.11100000143051147,
+    "min_class_acc": 0.2731374502182007,
+    "group_balance_min_over_max": -0.05869167080079318
+  },
+  "timing_s": {
+    "train_parents": 0.22190475463867188,
+    "replay_baseline_methods_1_8": 0.7330050468444824,
+    "ent_search": 2.1377010345458984,
+    "calibration": 0.08176302909851074,
+    "total": 4.365033864974976
+  }
+}

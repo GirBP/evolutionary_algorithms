@@ -1,0 +1,65 @@
+======================================================================
+E37: ENT v3 — CIFAR-10 stronger parents + conv filter EA
+======================================================================
+
+1. Training parents (30 epochs, BN, mini-batch)...
+  ep=0 loss=1.254
+  ep=10 loss=0.468
+  ep=20 loss=0.214
+  ep=0 loss=1.179
+  ep=10 loss=0.286
+  ep=20 loss=0.150
+
+  Parent A: 0.371
+  Parent B: 0.433
+  Class 0: best_parent=0.781
+  Class 1: best_parent=0.894
+  Class 2: best_parent=0.708
+  Class 3: best_parent=0.668
+  Class 4: best_parent=0.712
+  Class 5: best_parent=0.670
+  Class 6: best_parent=0.935
+  Class 7: best_parent=0.870
+  Class 8: best_parent=0.931
+  Class 9: best_parent=0.837
+
+2. ENT v3 — per-filter EA...
+  Gen 0: fit=0.5212 acc=0.593 min=0.311 ok=10/10
+  Gen 5: fit=0.5417 acc=0.519 min=0.395 ok=10/10
+  Gen 10: fit=0.5431 acc=0.509 min=0.394 ok=10/10
+  Gen 15: fit=0.5431 acc=0.509 min=0.394 ok=10/10
+  Gen 20: fit=0.5431 acc=0.509 min=0.394 ok=10/10
+
+  ENT-v3: acc=0.504 bal=0.997 ok=10/10 min=0.399
+
+3. KD fine-tuning...
+  KD ep 0: loss=3.410
+  KD ep 3: loss=2.762
+  KD ep 6: loss=2.524
+  KD ep 9: loss=2.344
+  ENT-v3+KD: acc=0.598 bal=0.706 ok=10/10 min=0.291
+
+4. Baselines...
+  Avg: acc=0.159 bal=0.114 ok=2/10
+
+======================================================================
+E37 RESULTS
+======================================================================
+  Method                    Acc    Bal    Min    OK
+  ENT-v3                  0.504  0.997  0.399  10/10 ✅
+  ENT-v3+KD               0.598  0.706  0.291  10/10 ✅
+  Average                 0.159  0.114  0.000   2/10
+
+  Per-class:
+  0: parent=0.781 Average=0.224 ENT-v3=0.403 ENT-v3+K=0.571
+  1: parent=0.894 Average=0.010 ENT-v3=0.561 ENT-v3+K=0.778
+  2: parent=0.708 Average=0.923 ENT-v3=0.569 ENT-v3+K=0.379
+  3: parent=0.668 Average=0.146 ENT-v3=0.492 ENT-v3+K=0.291
+  4: parent=0.712 Average=0.136 ENT-v3=0.490 ENT-v3+K=0.434
+  5: parent=0.670 Average=0.000 ENT-v3=0.432 ENT-v3+K=0.557
+  6: parent=0.935 Average=0.032 ENT-v3=0.676 ENT-v3+K=0.870
+  7: parent=0.870 Average=0.005 ENT-v3=0.456 ENT-v3+K=0.606
+  8: parent=0.931 Average=0.101 ENT-v3=0.544 ENT-v3+K=0.783
+  9: parent=0.837 Average=0.025 ENT-v3=0.399 ENT-v3+K=0.660
+
+  Time: 303s

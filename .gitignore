@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+.env
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Ваги моделей і чекпоінти (зберігаються поза git)
+*.pt
+*.pth
+*.pkl
+*.npy
+*.npz
+*.h5
+*.hdf5
+*.ckpt
+*.onnx
+
+# Архіви
+*.tar.gz
+*.zip
+
+# Бенчмарк-датасети (завантажуються окремо)
+**/data/pd1/
+**/data/fcnet/
+**/data/yahpo_data/
+**/data/imagenet/
+**/data/cifar*/
+**/data/circles/
+**/data/classification/
+
+# Великі raw-результати (агрегати лежать у *_visuals/ і *.tsv)
+**/cifar_fix/results/
+**/ent_math/results/*.pth
+**/ent_math/results/*.pkl
+
+# Логи та тимчасові
+*.log
+*.pid
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Локальні чекпоінти, згенеровані prepare.py (відтворювані)
+checkpoints/

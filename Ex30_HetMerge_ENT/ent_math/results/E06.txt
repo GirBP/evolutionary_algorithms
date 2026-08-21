@@ -1,0 +1,22 @@
+============================================================
+  HARNESS GATE CHECK — lean-k v5.1K
+============================================================
+  Metrics: 6 experiments logged
+  Consecutive fails: 1
+  Next E_id: E07
+------------------------------------------------------------
+  ❌ FAIL  §K11.1 plan.md current: plan.md CURRENT=E06 but next should be E07. UPDATE plan.md FIRST.
+  ❌ FAIL  §K11.2 branches updated: Branches [5] were tested but still show ⬛. UPDATE branch status: fail→🟡, 2×fail→🔴
+  ✅ PASS  §K11.3 consecutive fails: OK (1 consecutive fails, threshold=3)
+  ✅ PASS  §K11.4 program.md reread: OK
+  ✅ PASS  §K11.5 MPS GPU: OK
+  ✅ PASS  §K11.6 ITER_SUMMARY: OK
+============================================================
+
+🛑 GATE BLOCKED. Fix the following before running rn18_kd_lite.py:
+
+plan.md CURRENT=E06 but next should be E07. UPDATE plan.md FIRST.
+
+Branches [5] were tested but still show ⬛. UPDATE branch status: fail→🟡, 2×fail→🔴
+
+After fixing, run: python3 harness.py rn18_kd_lite.py 

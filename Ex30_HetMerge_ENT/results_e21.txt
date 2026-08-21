@@ -1,0 +1,84 @@
+======================================================================
+  E21: Merge → Compress → Single Model
+  Pipeline: A + B → NeuronConcat(teacher) → KD → Student
+======================================================================
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Same arch: A=[784, 128, 64, 10] B=[784, 128, 64, 10] → Student=[784, 128, 64, 10]
+  Parents: A=0.495 B=0.405
+  Teacher (concat): 0.717 arch=[784, 256, 128, 10]
+  Student T=2.0 e=20: 0.647 A=0.848 B=0.428 bal=0.505
+  Student T=2.0 e=40: 0.705 A=0.888 B=0.505 bal=0.568
+  Student T=4.0 e=20: 0.654 A=0.841 B=0.450 bal=0.535
+  Student T=4.0 e=40: 0.697 A=0.890 B=0.488 bal=0.548
+
+  Final student (T=4, 40ep):
+    Overall: 0.692  A=0.888  B=0.480  bal=0.541
+    Params: A=109,386 B=109,386 T=235,146 S=109,386 (compress=2.1×)
+  Per-class:
+    0: par=0.966 teacher=0.949 student=0.954 ✅
+    1: par=0.970 teacher=0.957 student=0.949 ✅
+    2: par=0.868 teacher=0.708 student=0.721 ✅
+    3: par=0.942 teacher=0.860 student=0.874 ✅
+    4: par=0.963 teacher=0.945 student=0.940 ✅
+    5: par=0.799 teacher=0.397 student=0.330 🟡
+    6: par=0.961 teacher=0.893 student=0.888 ✅
+    7: par=0.849 teacher=0.707 student=0.659 ✅
+    8: par=0.786 teacher=0.562 student=0.526 ✅
+    9: par=0.876 teacher=0.119 student=0.000 ❌
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Het 2x: A=[784, 64, 32, 10] B=[784, 192, 96, 10] → Student=[784, 128, 64, 10]
+  Parents: A=0.486 B=0.409
+  Teacher (concat): 0.662 arch=[784, 256, 128, 10]
+  Student T=2.0 e=20: 0.521 A=0.577 B=0.468 bal=0.810
+  Student T=2.0 e=40: 0.633 A=0.692 B=0.573 bal=0.828
+  Student T=4.0 e=20: 0.565 A=0.591 B=0.539 bal=0.912
+  Student T=4.0 e=40: 0.638 A=0.682 B=0.594 bal=0.872
+
+  Final student (T=4, 40ep):
+    Overall: 0.628  A=0.675  B=0.582  bal=0.862
+    Params: A=52,650 B=170,218 T=235,146 S=109,386 (compress=2.1×)
+  Per-class:
+    0: par=0.960 teacher=0.897 student=0.897 ✅
+    1: par=0.957 teacher=0.932 student=0.936 ✅
+    2: par=0.804 teacher=0.498 student=0.502 ✅
+    3: par=0.942 teacher=0.324 student=0.106 ❌
+    4: par=0.963 teacher=0.949 student=0.935 ✅
+    5: par=0.883 teacher=0.754 student=0.754 ✅
+    6: par=0.910 teacher=0.831 student=0.809 ✅
+    7: par=0.820 teacher=0.673 student=0.639 ✅
+    8: par=0.859 teacher=0.724 student=0.708 ✅
+    9: par=0.851 teacher=0.036 student=0.000 ❌
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Het 4x: A=[784, 32, 16, 10] B=[784, 128, 64, 10] → Student=[784, 80, 40, 10]
+  Parents: A=0.448 B=0.393
+  Teacher (concat): 0.633 arch=[784, 160, 80, 10]
+  Student T=2.0 e=20: 0.536 A=0.713 B=0.353 bal=0.495
+  Student T=2.0 e=40: 0.614 A=0.741 B=0.482 bal=0.651
+  Student T=4.0 e=20: 0.542 A=0.710 B=0.365 bal=0.515
+  Student T=4.0 e=40: 0.586 A=0.727 B=0.437 bal=0.602
+
+  Final student (T=4, 40ep):
+    Overall: 0.607  A=0.746  B=0.462  bal=0.619
+    Params: A=25,818 B=109,386 T=139,290 S=66,450 (compress=2.1×)
+  Per-class:
+    0: par=0.960 teacher=0.920 student=0.931 ✅
+    1: par=0.897 teacher=0.880 student=0.902 ✅
+    2: par=0.539 teacher=0.128 student=0.041 ❌
+    3: par=0.971 teacher=0.908 student=0.923 ✅
+    4: par=0.917 teacher=0.885 student=0.935 ✅
+    5: par=0.682 teacher=0.324 student=0.240 🟡
+    6: par=0.961 teacher=0.831 student=0.860 ✅
+    7: par=0.815 teacher=0.678 student=0.659 ✅
+    8: par=0.802 teacher=0.589 student=0.536 ✅
+    9: par=0.887 teacher=0.170 student=0.015 ❌
+
+======================================================================
+  FINAL: Single-Model Merge Results
+======================================================================
+  Same arch   : teacher=0.717 → student=0.693 bal=0.541 compress=2.1×
+  Het 2x      : teacher=0.662 → student=0.628 bal=0.862 compress=2.1×
+  Het 4x      : teacher=0.633 → student=0.607 bal=0.619 compress=2.1×
+  Time: 11.2s

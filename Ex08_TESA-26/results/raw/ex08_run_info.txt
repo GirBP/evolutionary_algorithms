@@ -1,0 +1,8 @@
+Ex08 — протокол запуску
+
+Кількість записів: 1116
+Кількість запусків (seeds): 3
+Методи (31): ACDE, E-ACDE, E-ETA (Elastic), E-HTA (Hessian), E-PQM (Phase), E-SMD (Metric), EARL (Ricci), Evo-HMT (−BN), Evo-HMT (−ERK), Evo-SynFlow, Evo-SynFlow (Adaptive), Evo-SynFlow (Ex07), Evo-SynFlow (Quantum Fidelity), Evo-SynFlow (SymWanda), Evo-SynFlow-Taylor, EvoStruct, FES-NSDE, Magnitude, Magnitude-ERK, OBSE, RIA (SOTA), SET, SET-v2 (TESA init), SoftMask, SoftMask-Grad, SoftMask-Grad-v2, SparseGPT (SOTA), TESA-26, TSPE, VPAM (ours), WANDA (SOTA)
+Рівні розрідження: [0.5, 0.7, 0.8, 0.85, 0.9, 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97]
+Датасети: blobs, circles, cnn, moons, resnet, spirals
+Архітектура: CNN + ResNet

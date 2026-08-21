@@ -1,0 +1,94 @@
+
+============================================================
+  Scenario: same-data
+  A classes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], B classes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+  --- seed=42 ---
+    Avg: acc=0.554 ok=7/10
+    TIES: acc=0.273 ok=3/10
+    ENT: acc=0.807 ok=10/10 mean_target=0.804
+
+  --- seed=123 ---
+    Avg: acc=0.643 ok=9/10
+    TIES: acc=0.380 ok=4/10
+    ENT: acc=0.805 ok=10/10 mean_target=0.805
+
+  --- seed=456 ---
+    Avg: acc=0.594 ok=9/10
+    TIES: acc=0.514 ok=6/10
+    ENT: acc=0.809 ok=10/10 mean_target=0.810
+
+============================================================
+  Scenario: overlapping
+  A classes: [0, 1, 2, 3, 4, 5, 6], B classes: [4, 5, 6, 7, 8, 9]
+
+  --- seed=42 ---
+    Avg: acc=0.194 ok=2/10
+    TIES: acc=0.157 ok=2/10
+    ENT: acc=0.743 ok=10/10 mean_target=0.742
+
+  --- seed=123 ---
+    Avg: acc=0.245 ok=3/10
+    TIES: acc=0.138 ok=1/10
+    ENT: acc=0.727 ok=10/10 mean_target=0.728
+
+  --- seed=456 ---
+    Avg: acc=0.251 ok=3/10
+    TIES: acc=0.262 ok=3/10
+    ENT: acc=0.712 ok=10/10 mean_target=0.712
+
+============================================================
+  Scenario: imbalanced
+  A classes: [0, 1, 2], B classes: [3, 4, 5, 6, 7, 8, 9]
+
+  --- seed=42 ---
+    Avg: acc=0.271 ok=4/10
+    TIES: acc=0.261 ok=3/10
+    ENT: acc=0.689 ok=9/10 mean_target=0.683
+
+  --- seed=123 ---
+    Avg: acc=0.184 ok=3/10
+    TIES: acc=0.173 ok=2/10
+    ENT: acc=0.697 ok=10/10 mean_target=0.698
+
+  --- seed=456 ---
+    Avg: acc=0.298 ok=3/10
+    TIES: acc=0.123 ok=1/10
+    ENT: acc=0.615 ok=10/10 mean_target=0.610
+
+======================================================================
+Task 4: Same-class Merge Results
+======================================================================
+
+  Scenario: same-data
+    Average     : acc=0.597±0.036 ok=8.3 target_mean=0.589
+    TIES        : acc=0.389±0.099 ok=4.3 target_mean=0.379
+    ENT         : acc=0.807±0.002 ok=10.0 target_mean=0.806
+    BestParent  : acc=0.819±0.003 ok=10.0 target_mean=0.818
+    ENT retention vs best parent: 0.985±0.004
+
+  Scenario: overlapping
+    Average     : acc=0.230±0.025 ok=2.7 target_mean=0.238
+    TIES        : acc=0.185±0.054 ok=2.0 target_mean=0.188
+    ENT         : acc=0.727±0.012 ok=10.0 target_mean=0.727
+    BestParent  : acc=0.614±0.012 ok=7.0 target_mean=0.608
+    ENT retention vs best parent: 1.184±0.005
+
+  Scenario: imbalanced
+    Average     : acc=0.251±0.049 ok=3.3 target_mean=0.247
+    TIES        : acc=0.186±0.057 ok=2.0 target_mean=0.181
+    ENT         : acc=0.667±0.037 ok=9.7 target_mean=0.663
+    BestParent  : acc=0.543±0.007 ok=7.0 target_mean=0.553
+    ENT retention vs best parent: 1.226±0.055
+
+  Total: 18.3s (0.3 min)
+
+metric_same-data_ent_acc: 0.8073
+metric_same-data_ent_ok: 10.0
+
+metric_overlapping_ent_acc: 0.7272
+metric_overlapping_ent_ok: 10.0
+
+metric_imbalanced_ent_acc: 0.6667
+metric_imbalanced_ent_ok: 9.7
+Done!

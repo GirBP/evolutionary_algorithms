@@ -1,0 +1,101 @@
+{
+  "42": {
+    "parentA": {
+      "arith": 10.6,
+      "words": 3678.3
+    },
+    "parentB": {
+      "arith": 550.8,
+      "words": 6.0
+    },
+    "Average": {
+      "arith": 14.6,
+      "words": 139.9,
+      "harmonic": 26.5
+    },
+    "TA": {
+      "arith": 11.8,
+      "words": 598.6,
+      "harmonic": 23.1
+    },
+    "ENT": {
+      "arith": 547.4,
+      "words": 6.0,
+      "harmonic": 11.8,
+      "alphas": [
+        0.0,
+        0.0,
+        0.042,
+        0.0,
+        0.001,
+        0.0
+      ]
+    }
+  },
+  "123": {
+    "parentA": {
+      "arith": 10.5,
+      "words": 4168.0
+    },
+    "parentB": {
+      "arith": 1399.8,
+      "words": 7.6
+    },
+    "Average": {
+      "arith": 14.8,
+      "words": 72.9,
+      "harmonic": 24.6
+    },
+    "TA": {
+      "arith": 11.6,
+      "words": 582.4,
+      "harmonic": 22.7
+    },
+    "ENT": {
+      "arith": 1428.5,
+      "words": 7.6,
+      "harmonic": 15.1,
+      "alphas": [
+        0.003,
+        0.052,
+        0.109,
+        0.331,
+        0.003,
+        0.0
+      ]
+    }
+  },
+  "456": {
+    "parentA": {
+      "arith": 10.2,
+      "words": 3849.5
+    },
+    "parentB": {
+      "arith": 1030.9,
+      "words": 16.6
+    },
+    "Average": {
+      "arith": 52.7,
+      "words": 23.6,
+      "harmonic": 32.6
+    },
+    "TA": {
+      "arith": 11.2,
+      "words": 499.6,
+      "harmonic": 21.9
+    },
+    "ENT": {
+      "arith": 10.1,
+      "words": 4141.2,
+      "harmonic": 20.2,
+      "alphas": [
+        0.747,
+        0.848,
+        0.975,
+        0.189,
+        0.998,
+        1.0
+      ]
+    }
+  }
+}

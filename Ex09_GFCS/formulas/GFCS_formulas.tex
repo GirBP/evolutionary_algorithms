@@ -1,0 +1,195 @@
+% ============================================================
+%  GFCS: Gradient-Flow Connectivity Synthesis — LaTeX формули
+%  Для вставки в дисертацію / статтю
+% ============================================================
+
+% ──────────────────────────────────────────
+%  1. Sparse model definition
+% ──────────────────────────────────────────
+
+f_S(x) = f(x;\, \theta \odot M), \quad \frac{\|M\|_0}{|\theta|} = 1 - s
+
+% ──────────────────────────────────────────
+%  2. Problem requirements
+% ──────────────────────────────────────────
+
+|\mathrm{params}(f_C)| \ll |\mathrm{params}(f_S)|, \quad
+Q(f_C) \geq Q(f_S) - \varepsilon, \quad
+T_{\mathrm{inference}}(f_C) < T_{\mathrm{inference}}(f_S)
+
+% ──────────────────────────────────────────
+%  3. Active neuron definition
+% ──────────────────────────────────────────
+
+\mathcal{A}_l = \bigl\{\, i \;:\; \|W_l[i,:]\|_1 > 0 \;\wedge\; \|W_{l+1}[:,i]\|_1 > 0 \,\bigr\}
+
+% ──────────────────────────────────────────
+%  4. Flow Importance (Definition 1)
+% ──────────────────────────────────────────
+
+% Compact form:
+\varphi_i = \|W_l[i,:]\|_1 \cdot \|W_{l+1}[:,i]\|_1
+
+% Expanded form:
+\varphi_i = \underbrace{\sum_{k=1}^{n_{l-1}} |W_l[i,k]|}_{\text{incoming flow}}
+            \;\cdot\;
+            \underbrace{\sum_{j=1}^{n_{l+1}} |W_{l+1}[j,i]|}_{\text{outgoing flow}}
+
+% ──────────────────────────────────────────
+%  5. Flow Affinity (Definition 2)
+% ──────────────────────────────────────────
+
+% Full form:
+A[i,j] = \underbrace{\sum_{k=1}^{n_{l-1}} \min\!\bigl(|W_l[i,k]|,\, |W_l[j,k]|\bigr)}_{I_{ij}:\;\text{input overlap}}
+         \;\cdot\;
+         \underbrace{\sum_{m=1}^{n_{l+1}} \min\!\bigl(|W_{l+1}[m,i]|,\, |W_{l+1}[m,j]|\bigr)}_{O_{ij}:\;\text{output overlap}}
+
+% Components separately:
+I_{ij} = \sum_{k=1}^{n_{l-1}} \min\bigl(|W_l[i,k]|,\; |W_l[j,k]|\bigr)
+
+O_{ij} = \sum_{m=1}^{n_{l+1}} \min\bigl(|W_{l+1}[m,i]|,\; |W_{l+1}[m,j]|\bigr)
+
+A[i,j] = I_{ij} \cdot O_{ij}
+
+% ──────────────────────────────────────────
+%  6. Merge Operator (Definition 3)
+% ──────────────────────────────────────────
+
+% Incoming weights (flow-weighted average):
+w_{\mathrm{in}}^{\mathrm{merged}} =
+  \frac{\varphi_i \cdot w_{\mathrm{in}}^{i} \;+\; \varphi_j \cdot w_{\mathrm{in}}^{j}}
+       {\varphi_i + \varphi_j}
+
+% Bias (flow-weighted average):
+b^{\mathrm{merged}} =
+  \frac{\varphi_i \cdot b_i \;+\; \varphi_j \cdot b_j}
+       {\varphi_i + \varphi_j}
+
+% Outgoing weights (sum):
+w_{\mathrm{out}}^{\mathrm{merged}} = w_{\mathrm{out}}^{i} + w_{\mathrm{out}}^{j}
+
+% ──────────────────────────────────────────
+%  7. Greedy selection rule
+% ──────────────────────────────────────────
+
+\mathrm{victim} = \underset{i \in \mathcal{A}_l}{\arg\min}\; \varphi_i, \qquad
+\mathrm{partner} = \underset{j \in \mathcal{A}_l \setminus \{i^*\}}{\arg\max}\; A[\mathrm{victim},\, j]
+
+% ──────────────────────────────────────────
+%  8. Affinity update after merge
+% ──────────────────────────────────────────
+
+A[\mathrm{partner},\, k] \leftarrow
+  \max\bigl(A[\mathrm{partner},\, k],\; A[\mathrm{victim},\, k]\bigr),
+  \quad \forall\, k \in \mathcal{A}_l \setminus \{\mathrm{victim},\, \mathrm{partner}\}
+
+% ──────────────────────────────────────────
+%  9. Flow importance update after merge
+% ──────────────────────────────────────────
+
+\varphi_{\mathrm{partner}} \leftarrow \varphi_{\mathrm{victim}} + \varphi_{\mathrm{partner}}
+
+% ──────────────────────────────────────────
+% 10. EA Genotype
+% ──────────────────────────────────────────
+
+\mathbf{g} = (r_1, r_2, \ldots, r_{L-1}), \quad r_l \in [r_{\min}, r_{\max}]
+
+% ──────────────────────────────────────────
+% 11. Target neurons per layer
+% ──────────────────────────────────────────
+
+k_l = \max\!\left(4,\; \left\lfloor n_l^{\mathrm{act}} \cdot r_l \right\rfloor\right)
+
+% ──────────────────────────────────────────
+% 12. Zero-Cost Flow Fitness (Definition 4)
+% ──────────────────────────────────────────
+
+F(\mathbf{g}) = -\sum_{l=1}^{L-1}
+  \left(1 - \frac{\displaystyle\sum_{i \in \mathrm{top\text{-}}k_l(\varphi)} \varphi_i}
+                  {\displaystyle\sum_{i \in \mathcal{A}_l} \varphi_i}\right)
+  \;-\; \lambda \cdot \frac{\displaystyle\sum_{l} k_l}
+                            {\displaystyle\sum_{l} n_l^{\mathrm{act}}}
+
+% ──────────────────────────────────────────
+% 13. EA Mutation
+% ──────────────────────────────────────────
+
+\mathbf{g}_{\mathrm{child}} = \mathbf{g}_{\mathrm{parent}} + \mathcal{N}(0,\, \sigma^2 I),
+\qquad
+\sigma = 0.12 \cdot \left(1 - \frac{g}{2G}\right)
+
+% ──────────────────────────────────────────
+% 14. WANDA vs GFCS comparison
+% ──────────────────────────────────────────
+
+% WANDA (data-dependent):
+s_j^{\mathrm{WANDA}} = |w_j| \cdot \|X_j\|_2
+
+% GFCS (data-independent):
+\varphi_i^{\mathrm{GFCS}} = \|W_{\mathrm{in}}[i,:]\|_1 \cdot \|W_{\mathrm{out}}[:,i]\|_1
+
+% ──────────────────────────────────────────
+% 15. Cosine vs Min-Overlap
+% ──────────────────────────────────────────
+
+% Cosine is scale-invariant:
+\cos(\alpha \mathbf{w},\, \mathbf{w}) = 1, \quad \forall\, \alpha > 0
+
+% Min-overlap is scale-sensitive:
+\sum_{k} \min(|\alpha w_k|,\; |w_k|) = \min(\alpha, 1) \cdot \|\mathbf{w}\|_1
+
+% ──────────────────────────────────────────
+% 16. Complexity
+% ──────────────────────────────────────────
+
+\mathcal{O}\!\left(n^2 \cdot d \;+\; n^3\right) \quad \text{per layer}
+
+% ──────────────────────────────────────────
+% 17. Quality criterion
+% ──────────────────────────────────────────
+
+Q(f_C) \geq Q(f_S) - \varepsilon, \quad \varepsilon = 0.03
+
+% ──────────────────────────────────────────
+% 18. Compression ratio
+% ──────────────────────────────────────────
+
+\mathrm{Compression} = \frac{|\mathrm{params}(f_T)|}{|\mathrm{params}(f_C)|}
+
+% ──────────────────────────────────────────
+% 19. FLOP speedup
+% ──────────────────────────────────────────
+
+\mathrm{Speedup}_{\mathrm{FLOP}} = \frac{\mathrm{FLOPs}(f_T)}{\mathrm{FLOPs}(f_C)}
+
+% ──────────────────────────────────────────
+% 20. Merge operator as equation block (for paper)
+% ──────────────────────────────────────────
+
+% Use in align environment:
+% \begin{align}
+%   w_{\mathrm{in}}^{\mathrm{merged}} &=
+%     \frac{\varphi_i \cdot w_{\mathrm{in}}^{i} + \varphi_j \cdot w_{\mathrm{in}}^{j}}
+%          {\varphi_i + \varphi_j}
+%     \label{eq:merge_in} \\
+%   b^{\mathrm{merged}} &=
+%     \frac{\varphi_i \cdot b_i + \varphi_j \cdot b_j}
+%          {\varphi_i + \varphi_j}
+%     \label{eq:merge_bias} \\
+%   w_{\mathrm{out}}^{\mathrm{merged}} &=
+%     w_{\mathrm{out}}^{i} + w_{\mathrm{out}}^{j}
+%     \label{eq:merge_out}
+% \end{align}
+
+% ──────────────────────────────────────────
+% 21. Full fitness in equation block (for paper)
+% ──────────────────────────────────────────
+
+% \begin{equation}
+%   F(\mathbf{g}) = -\sum_{l=1}^{L-1}
+%     \left(1 - \frac{\sum_{i \in \mathrm{top\text{-}}k_l} \varphi_i}
+%                     {\sum_{i \in \mathcal{A}_l} \varphi_i}\right)
+%     - \lambda \cdot \frac{\sum_{l} k_l}{\sum_{l} n_l^{\mathrm{act}}}
+%   \label{eq:flow_fitness}
+% \end{equation}

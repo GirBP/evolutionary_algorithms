@@ -1,0 +1,586 @@
+{
+  "results": [
+    {
+      "dataset": "moons",
+      "seed": 42,
+      "sp": 0.85,
+      "sparse_f1": 0.9112,
+      "teacher_f1": 0.9583,
+      "teacher_params": 33666,
+      "gfcs_f1": 0.965,
+      "gfcs_p": 6239,
+      "gfcs_h": [
+        83,
+        62,
+        12
+      ],
+      "mag_f1": 0.965,
+      "mag_p": 11738,
+      "mag_h": [
+        112,
+        88,
+        16
+      ],
+      "evo_f1": 0.965,
+      "evo_p": 16496,
+      "evo_h": [
+        122,
+        114,
+        18
+      ],
+      "combo_f1": 0.9667,
+      "combo_p": 18611,
+      "combo_h": [
+        95,
+        91,
+        102
+      ]
+    },
+    {
+      "dataset": "moons",
+      "seed": 123,
+      "sp": 0.9,
+      "sparse_f1": 0.9566,
+      "teacher_f1": 0.9567,
+      "teacher_params": 33666,
+      "gfcs_f1": 0.9667,
+      "gfcs_p": 2645,
+      "gfcs_h": [
+        49,
+        46,
+        4
+      ],
+      "mag_f1": 0.965,
+      "mag_p": 7759,
+      "mag_h": [
+        90,
+        77,
+        6
+      ],
+      "evo_f1": 0.9633,
+      "evo_p": 6383,
+      "evo_h": [
+        105,
+        54,
+        6
+      ],
+      "combo_f1": 0.9633,
+      "combo_p": 8747,
+      "combo_h": [
+        71,
+        78,
+        36
+      ]
+    },
+    {
+      "dataset": "circles",
+      "seed": 42,
+      "sp": 0.85,
+      "sparse_f1": 0.9266,
+      "teacher_f1": 0.9433,
+      "teacher_params": 33666,
+      "gfcs_f1": 0.9383,
+      "gfcs_p": 4211,
+      "gfcs_h": [
+        68,
+        51,
+        9
+      ],
+      "mag_f1": 0.9333,
+      "mag_p": 9347,
+      "mag_h": [
+        101,
+        79,
+        12
+      ],
+      "evo_f1": 0.9433,
+      "evo_p": 7597,
+      "evo_h": [
+        122,
+        55,
+        8
+      ],
+      "combo_f1": 0.9383,
+      "combo_p": 16442,
+      "combo_h": [
+        86,
+        84,
+        102
+      ]
+    },
+    {
+      "dataset": "circles",
+      "seed": 123,
+      "sp": 0.85,
+      "sparse_f1": 0.95,
+      "teacher_f1": 0.9383,
+      "teacher_params": 33666,
+      "gfcs_f1": 0.9433,
+      "gfcs_p": 4487,
+      "gfcs_h": [
+        58,
+        65,
+        7
+      ],
+      "mag_f1": 0.9417,
+      "mag_p": 9349,
+      "mag_h": [
+        100,
+        82,
+        9
+      ],
+      "evo_f1": 0.9417,
+      "evo_p": 7775,
+      "evo_h": [
+        95,
+        69,
+        12
+      ],
+      "combo_f1": 0.9317,
+      "combo_p": 18689,
+      "combo_h": [
+        75,
+        102,
+        102
+      ]
+    },
+    {
+      "dataset": "spirals",
+      "seed": 42,
+      "sp": 0.9,
+      "sparse_f1": 0.9533,
+      "teacher_f1": 0.9349,
+      "teacher_params": 33666,
+      "gfcs_f1": 0.9667,
+      "gfcs_p": 1349,
+      "gfcs_h": [
+        72,
+        12,
+        17
+      ],
+      "mag_f1": 0.975,
+      "mag_p": 14819,
+      "mag_h": [
+        91,
+        127,
+        22
+      ],
+      "evo_f1": 0.975,
+      "evo_p": 15608,
+      "evo_h": [
+        101,
+        118,
+        27
+      ],
+      "combo_f1": 0.9717,
+      "combo_p": 3279,
+      "combo_h": [
+        102,
+        13,
+        102
+      ]
+    },
+    {
+      "dataset": "spirals",
+      "seed": 123,
+      "sp": 0.9,
+      "sparse_f1": 0.9483,
+      "teacher_f1": 0.94,
+      "teacher_params": 33666,
+      "gfcs_f1": 0.9617,
+      "gfcs_p": 2159,
+      "gfcs_h": [
+        55,
+        27,
+        16
+      ],
+      "mag_f1": 0.9683,
+      "mag_p": 4949,
+      "mag_h": [
+        69,
+        52,
+        20
+      ],
+      "evo_f1": 0.9717,
+      "evo_p": 7769,
+      "evo_h": [
+        90,
+        67,
+        20
+      ],
+      "combo_f1": 0.9717,
+      "combo_p": 14349,
+      "combo_h": [
+        102,
+        67,
+        102
+      ]
+    },
+    {
+      "dataset": "blobs",
+      "seed": 42,
+      "sp": 0.65,
+      "sparse_f1": 1.0,
+      "teacher_f1": 1.0,
+      "teacher_params": 33924,
+      "gfcs_f1": 1.0,
+      "gfcs_p": 14504,
+      "gfcs_h": [
+        100,
+        80,
+        72
+      ],
+      "mag_f1": 1.0,
+      "mag_p": 22429,
+      "mag_h": [
+        125,
+        100,
+        90
+      ],
+      "evo_f1": 1.0,
+      "evo_p": 29630,
+      "evo_h": [
+        122,
+        120,
+        116
+      ],
+      "combo_f1": 1.0,
+      "combo_p": 21730,
+      "combo_h": [
+        102,
+        102,
+        102
+      ]
+    },
+    {
+      "dataset": "blobs",
+      "seed": 123,
+      "sp": 0.85,
+      "sparse_f1": 0.9683,
+      "teacher_f1": 0.9667,
+      "teacher_params": 33924,
+      "gfcs_f1": 0.9616,
+      "gfcs_p": 8939,
+      "gfcs_h": [
+        86,
+        63,
+        47
+      ],
+      "mag_f1": 0.9633,
+      "mag_p": 19076,
+      "mag_h": [
+        108,
+        104,
+        68
+      ],
+      "evo_f1": 0.9633,
+      "evo_p": 20353,
+      "evo_h": [
+        108,
+        105,
+        78
+      ],
+      "combo_f1": 0.9633,
+      "combo_p": 15814,
+      "combo_h": [
+        102,
+        78,
+        90
+      ]
+    },
+    {
+      "dataset": "gaussian_quantiles",
+      "seed": 42,
+      "sp": 0.75,
+      "sparse_f1": 0.8281,
+      "teacher_f1": 0.9602,
+      "teacher_params": 33924,
+      "gfcs_f1": 0.9601,
+      "gfcs_p": 10899,
+      "gfcs_h": [
+        88,
+        73,
+        53
+      ],
+      "mag_f1": 0.9733,
+      "mag_p": 22741,
+      "mag_h": [
+        110,
+        124,
+        67
+      ],
+      "evo_f1": 0.9401,
+      "evo_p": 18523,
+      "evo_h": [
+        122,
+        87,
+        81
+      ],
+      "combo_f1": 0.9062,
+      "combo_p": 16400,
+      "combo_h": [
+        102,
+        76,
+        102
+      ]
+    },
+    {
+      "dataset": "gaussian_quantiles",
+      "seed": 123,
+      "sp": 0.75,
+      "sparse_f1": 0.8069,
+      "teacher_f1": 0.9599,
+      "teacher_params": 33924,
+      "gfcs_f1": 0.94,
+      "gfcs_p": 10993,
+      "gfcs_h": [
+        80,
+        73,
+        62
+      ],
+      "mag_f1": 0.8788,
+      "mag_p": 23910,
+      "mag_h": [
+        106,
+        124,
+        80
+      ],
+      "evo_f1": 0.9103,
+      "evo_p": 20616,
+      "evo_h": [
+        104,
+        114,
+        70
+      ],
+      "combo_f1": 0.9519,
+      "combo_p": 15762,
+      "combo_h": [
+        97,
+        76,
+        99
+      ]
+    },
+    {
+      "dataset": "classification",
+      "seed": 42,
+      "sp": 0.75,
+      "sparse_f1": 0.8119,
+      "teacher_f1": 0.8154,
+      "teacher_params": 33924,
+      "gfcs_f1": 0.8204,
+      "gfcs_p": 11100,
+      "gfcs_h": [
+        94,
+        66,
+        64
+      ],
+      "mag_f1": 0.8047,
+      "mag_p": 25832,
+      "mag_h": [
+        118,
+        126,
+        80
+      ],
+      "evo_f1": 0.8126,
+      "evo_p": 25832,
+      "evo_h": [
+        118,
+        126,
+        80
+      ],
+      "combo_f1": 0.8149,
+      "combo_p": 14555,
+      "combo_h": [
+        102,
+        67,
+        102
+      ]
+    },
+    {
+      "dataset": "classification",
+      "seed": 123,
+      "sp": 0.85,
+      "sparse_f1": 0.8055,
+      "teacher_f1": 0.8625,
+      "teacher_params": 33924,
+      "gfcs_f1": 0.8655,
+      "gfcs_p": 8059,
+      "gfcs_h": [
+        74,
+        67,
+        39
+      ],
+      "mag_f1": 0.8752,
+      "mag_p": 13112,
+      "mag_h": [
+        93,
+        88,
+        49
+      ],
+      "evo_f1": 0.862,
+      "evo_p": 13112,
+      "evo_h": [
+        93,
+        88,
+        49
+      ],
+      "combo_f1": 0.8561,
+      "combo_p": 20910,
+      "combo_h": [
+        102,
+        98,
+        102
+      ]
+    },
+    {
+      "dataset": "highdim",
+      "seed": 42,
+      "sp": 0.7,
+      "sparse_f1": 0.8582,
+      "teacher_f1": 0.9214,
+      "teacher_params": 40197,
+      "gfcs_f1": 0.9198,
+      "gfcs_p": 16429,
+      "gfcs_h": [
+        102,
+        74,
+        45
+      ],
+      "mag_f1": 0.8622,
+      "mag_p": 26777,
+      "mag_h": [
+        128,
+        107,
+        57
+      ],
+      "evo_f1": 0.8563,
+      "evo_p": 28655,
+      "evo_h": [
+        116,
+        120,
+        69
+      ],
+      "combo_f1": 0.8619,
+      "combo_p": 24064,
+      "combo_h": [
+        102,
+        89,
+        102
+      ]
+    },
+    {
+      "dataset": "highdim",
+      "seed": 123,
+      "sp": 0.65,
+      "sparse_f1": 0.8817,
+      "teacher_f1": 0.9085,
+      "teacher_params": 40197,
+      "gfcs_f1": 0.8932,
+      "gfcs_p": 16744,
+      "gfcs_h": [
+        102,
+        79,
+        40
+      ],
+      "mag_f1": 0.9019,
+      "mag_p": 24659,
+      "mag_h": [
+        128,
+        99,
+        51
+      ],
+      "evo_f1": 0.8867,
+      "evo_p": 27449,
+      "evo_h": [
+        122,
+        114,
+        60
+      ],
+      "combo_f1": 0.8411,
+      "combo_p": 26729,
+      "combo_h": [
+        102,
+        102,
+        102
+      ]
+    },
+    {
+      "dataset": "sequence_cls",
+      "seed": 42,
+      "sp": 0.9,
+      "sparse_f1": 0.8247,
+      "teacher_f1": 0.9395,
+      "teacher_params": 35716,
+      "gfcs_f1": 0.867,
+      "gfcs_p": 3587,
+      "gfcs_h": [
+        33,
+        37,
+        42
+      ],
+      "mag_f1": 0.8932,
+      "mag_p": 8983,
+      "mag_h": [
+        58,
+        69,
+        53
+      ],
+      "evo_f1": 0.9163,
+      "evo_p": 8584,
+      "evo_h": [
+        75,
+        48,
+        69
+      ],
+      "combo_f1": 0.8966,
+      "combo_p": 14087,
+      "combo_h": [
+        74,
+        70,
+        101
+      ]
+    },
+    {
+      "dataset": "sequence_cls",
+      "seed": 123,
+      "sp": 0.85,
+      "sparse_f1": 0.8928,
+      "teacher_f1": 0.9484,
+      "teacher_params": 35716,
+      "gfcs_f1": 0.9216,
+      "gfcs_p": 5489,
+      "gfcs_h": [
+        45,
+        45,
+        53
+      ],
+      "mag_f1": 0.8954,
+      "mag_p": 21401,
+      "mag_h": [
+        93,
+        121,
+        67
+      ],
+      "evo_f1": 0.901,
+      "evo_p": 17537,
+      "evo_h": [
+        84,
+        109,
+        60
+      ],
+      "combo_f1": 0.9042,
+      "combo_p": 9553,
+      "combo_h": [
+        63,
+        48,
+        102
+      ]
+    }
+  ],
+  "method_wins": {
+    "SDR-GFCS": 2,
+    "GFCS": 6,
+    "SDR-Evo": 3,
+    "SDR-Mag": 5
+  }
+}

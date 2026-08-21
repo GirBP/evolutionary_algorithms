@@ -1,0 +1,52 @@
+[
+  {
+    "scenario": "Same-data (128 vs 256)",
+    "strategy": "PCMA",
+    "overlap": 1.0,
+    "overall": 0.8285,
+    "retention": 0.9726,
+    "balance": 1.0,
+    "A_acc": 0.8285,
+    "B_acc": 0.8285
+  },
+  {
+    "scenario": "Disjoint 0-4 vs 5-9",
+    "strategy": "NeuronConcat",
+    "overlap": 0.0,
+    "overall": 0.665,
+    "retention": 0.7492,
+    "balance": 0.6561,
+    "A_acc": 0.7987,
+    "B_acc": 0.5241
+  },
+  {
+    "scenario": "Het disjoint 64 vs 192",
+    "strategy": "NeuronConcat",
+    "overlap": 0.0,
+    "overall": 0.595,
+    "retention": 0.6557,
+    "balance": 0.6329,
+    "A_acc": 0.724,
+    "B_acc": 0.4583
+  },
+  {
+    "scenario": "Overlap 0-6 vs 3-9",
+    "strategy": "Hybrid",
+    "overlap": 0.4,
+    "overall": 0.467,
+    "retention": 0.5152,
+    "balance": 0.8766,
+    "A_acc": 0.6131,
+    "B_acc": 0.5374
+  },
+  {
+    "scenario": "Het overlap 128 vs 256",
+    "strategy": "Hybrid",
+    "overlap": 0.4,
+    "overall": 0.4965,
+    "retention": 0.5506,
+    "balance": 0.9149,
+    "A_acc": 0.6386,
+    "B_acc": 0.5842
+  }
+]

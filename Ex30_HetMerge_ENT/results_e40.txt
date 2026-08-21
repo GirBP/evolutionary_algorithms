@@ -1,0 +1,49 @@
+======================================================================
+E40: Breaking Block-Diagonal — Cross-Connections + CKA Matching
+======================================================================
+Parents: A=0.503 B=0.419
+
+1. CKA neuron matching...
+  Layer 0: 0 matched pairs (threshold=0.7)
+  Layer 1: 0 matched pairs
+
+==================================================
+METHOD 1: Standard ENT (block-diagonal, no cross)
+
+==================================================
+METHOD 2: ENT + Cross-Connections
+
+==================================================
+METHOD 3: CKA Merge (average matched neurons)
+  [Standard] Gen 0: fit=0.7394 acc=0.843 min=0.670
+  [Standard] Gen 10: fit=0.7748 acc=0.834 min=0.770
+  [Standard] Gen 20: fit=0.7748 acc=0.834 min=0.770
+  [Cross] Gen 0: fit=0.7394 acc=0.843 min=0.670
+  [Cross] Gen 10: fit=0.7394 acc=0.843 min=0.670
+  [Cross] Gen 20: fit=0.7507 acc=0.837 min=0.706
+  [CKA] Gen 0: fit=0.7394 acc=0.843 min=0.670
+  [CKA] Gen 10: fit=0.7837 acc=0.850 min=0.772
+  [CKA] Gen 20: fit=0.7872 acc=0.858 min=0.772
+
+======================================================================
+RESULTS: Breaking Block-Diagonal Isolation
+======================================================================
+
+  Method                Acc    Bal    Min    OK  MaxDrop   ≤5%  ≤10%   Params
+  ------------------ ------ ------ ------ ----- -------- ----- ----- --------
+  Standard ENT        0.792  0.927  0.674  10/10    0.258   1/10   3/10  191,852
+  ENT+Cross           0.793  0.800  0.620  10/10    0.242   2/10   4/10  214,416
+  CKA Merge           0.813  0.908  0.734  10/10    0.191   3/10   4/10  235,146
+
+  Per-class drop vs best parent:
+   C  Parent  Standard     Cross       CKA
+   0   0.989     0.154       0.086       0.023 ✓
+   1   0.979     0.051       0.026 ✓     0.047  
+   2   0.922     0.105       0.037 ✓     0.119  
+   3   0.947     0.208       0.193       0.169 ✓
+   4   0.954     0.180       0.074 ✓     0.175  
+   5   0.894     0.128 ✓     0.156       0.128 ✓
+   6   0.933     0.258       0.242       0.191 ✓
+   7   0.863     0.068       0.132       0.049 ✓
+   8   0.844     0.146       0.224       0.109 ✓
+   9   0.887     0.026 ✓     0.165       0.077  

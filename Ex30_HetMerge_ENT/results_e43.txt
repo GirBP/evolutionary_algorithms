@@ -1,0 +1,117 @@
+======================================================================
+E43: Mathematician's Plan — ALL Missing Points
+======================================================================
+Parents: A=0.503 B=0.419
+
+============================================================
+1. FIXED ENSEMBLE — True upper bound
+============================================================
+  v1 (naive):        acc=0.763
+  v2 (softmax norm): acc=0.699
+  v3 (temp=0.5):     acc=0.688
+  v4 (ORACLE):       acc=0.922  ← TRUE upper bound
+  v5 (mask -inf):    acc=0.763
+
+  Per-class comparison:
+   C  Parent   Naive    Sfmx   T=0.5  Oracle    Mask
+   0   0.989   0.954   0.897   0.891   0.989   0.954
+   1   0.979   0.957   0.953   0.953   0.979   0.957
+   2   0.922   0.813   0.717   0.699   0.922   0.813
+   3   0.947   0.797   0.841   0.836   0.947   0.797
+   4   0.954   0.926   0.945   0.940   0.954   0.926
+   5   0.894   0.637   0.397   0.385   0.894   0.637
+   6   0.933   0.736   0.815   0.798   0.933   0.736
+   7   0.863   0.771   0.634   0.600   0.863   0.771
+   8   0.844   0.703   0.594   0.583   0.844   0.703
+   9   0.887   0.273   0.113   0.113   0.887   0.273
+
+  TRUE upper bound: v4 acc=0.922
+
+============================================================
+2. LOWER BOUND — Minimum model size for ε-drop
+============================================================
+  [ 16,  8] params=  12,786 acc=0.445 maxdrop=0.947 ≤5%=1/10 ≤10%=2/10
+  [ 32, 16] params=  25,818 acc=0.724 maxdrop=0.782 ≤5%=2/10 ≤10%=3/10
+  [ 64, 32] params=  52,650 acc=0.771 maxdrop=0.447 ≤5%=2/10 ≤10%=4/10
+  [128, 64] params= 109,386 acc=0.828 maxdrop=0.161 ≤5%=2/10 ≤10%=3/10
+  [256,128] params= 235,146 acc=0.852 maxdrop=0.188 ≤5%=3/10 ≤10%=8/10
+
+============================================================
+3. REDUNDANCY — MI, CKA, Correlation between A and B
+============================================================
+  Correlation matrix stats:
+    Mean: 0.2970
+    Max:  0.9664
+    >0.7: 1032 pairs
+    >0.5: 3747 pairs
+    >0.3: 7407 pairs
+  Layer 0 CKA: 0.7721
+  Layer 1 CKA: 0.7138
+  MI (top-10 neurons): mean=0.5044 max=0.9497
+  Interpretation: HIGH redundancy
+
+============================================================
+4. OT NEURON ALIGNMENT (Sinkhorn)
+============================================================
+  OT total cost: 45.10 (max possible: 128)
+  Average match quality: 0.6477
+  Top-5 matches:
+    A[ 44] ↔ B[101]: quality=0.966
+    A[ 89] ↔ B[ 89]: quality=0.939
+    A[ 78] ↔ B[118]: quality=0.917
+    A[  5] ↔ B[ 48]: quality=0.906
+    A[ 88] ↔ B[ 26]: quality=0.902
+  Worst-5 matches:
+    A[ 61] ↔ B[  7]: quality=0.000
+    A[ 76] ↔ B[ 56]: quality=0.000
+    A[ 86] ↔ B[104]: quality=0.000
+    A[104] ↔ B[126]: quality=0.000
+    A[112] ↔ B[ 91]: quality=0.000
+
+  OT-aligned merge:
+  Matched pairs (quality>0.3): 116
+  OT merge: acc=0.647 maxdrop=0.665 ≤5%=0/10 params=129,238
+
+============================================================
+5. ENT baseline (for comparison)
+  ENT: acc=0.792 maxdrop=0.258 ≤5%=1/10
+  ENT neurons used: A0=105/128 B0=107/128 A1=55/64 B1=59/64
+
+============================================================
+6. EA CONVERGENCE — fitness over generations
+============================================================
+  Convergence curve:
+    Gen  0: fitness=0.7394
+    Gen  5: fitness=0.7394
+    Gen 10: fitness=0.7748
+    Gen 15: fitness=0.7748
+    Gen 20: fitness=0.7748
+    Gen 25: fitness=0.7748
+    Gen 30: fitness=0.7748
+    Gen 35: fitness=0.7748
+    Gen 40: fitness=0.7748
+    Gen 45: fitness=0.7748
+    Gen 49: fitness=0.7748
+  Total improvement: 0.0355
+  Plateau at gen: 1
+  80% of improvement by gen: 10
+
+======================================================================
+MATHEMATICIAN'S PLAN — COMPLETE RESULTS
+======================================================================
+
+  1. TRUE UPPER BOUND: Oracle ensemble = 0.922 (v4)
+     Mask ensemble = 0.763 (v5)
+     ENT vs true UB: ENT BEATS UB
+
+  2. LOWER BOUND (distillation scan): see size table above
+
+  3. REDUNDANCY: CKA_L0=0.772 CKA_L1=0.714 MI=0.5044
+     → HIGH redundancy → concat is justified
+
+  4. OT ALIGNMENT: acc=0.647 (116 matched pairs)
+     OT vs ENT: ENT wins by 0.145
+
+  5. ENT: acc=0.792 ≤5%=1/10
+
+  6. EA CONVERGENCE: plateau at gen 1, 80% by gen 10

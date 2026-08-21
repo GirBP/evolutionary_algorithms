@@ -1,0 +1,42 @@
+===========================================================================
+  E06 [SYNTHESIS] PCMA Final Validation
+  6 configs × 2 datasets × 3 seeds = 36 runs
+===========================================================================
+
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+  Dataset: MNIST
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+
+  ──── 3L 2x ────
+  A=[784, 128, 64, 10]
+  B=[784, 256, 128, 10]
+    s=42: A=0.895 B=0.905 → merged=0.904 ret=0.999 ✅ α=[0.84, 0.83, 0.86] dims=195 1.6s
+    s=123: A=0.893 B=0.896 → merged=0.898 ret=1.002 ✅ α=[0.8, 0.77, 0.88] dims=195 0.7s
+    s=777: A=0.900 B=0.906 → merged=0.904 ret=0.998 ✅ α=[0.89, 0.77, 0.85] dims=195 0.7s
+
+  ──── 3L 3x ────
+  A=[784, 64, 32, 10]
+  B=[784, 192, 96, 10]
+    s=42: A=0.883 B=0.891 → merged=0.887 ret=0.996 ✅ α=[0.88, 0.87, 0.9] dims=99 0.5s
+    s=123: A=0.870 B=0.896 → merged=0.882 ret=0.984 ✅ α=[0.86, 0.8, 0.73] dims=99 0.5s
+    s=777: A=0.884 B=0.903 → merged=0.898 ret=0.994 ✅ α=[0.88, 0.85, 0.79] dims=99 0.5s
+
+  ──── 5L 2x ────
+  A=[784, 256, 128, 64, 32, 10]
+  B=[784, 512, 256, 128, 64, 10]
+    s=42: A=0.862 B=0.889 → merged=0.875 ret=0.984 ✅ α=[0.81, 0.78, 0.83, 0.69, 0.82] dims=485 1.9s
+Traceback (most recent call last):
+  File "/Users/bibo/Desktop/cs_dev/Ex30_HetMerge/e06_synthesis.py", line 186, in <module>
+    main()
+    ~~~~^^
+  File "/Users/bibo/Desktop/cs_dev/Ex30_HetMerge/e06_synthesis.py", line 111, in main
+    result = merger.merge(X_te, y_te, maxiter=40, popsize=14, seed=seed)
+  File "/Users/bibo/Desktop/cs_dev/Ex30_HetMerge/pcma.py", line 228, in merge
+    es.tell(sols, [fitness(np.array(s)) for s in sols])
+                   ~~~~~~~^^^^^^^^^^^^^
+  File "/Users/bibo/Desktop/cs_dev/Ex30_HetMerge/pcma.py", line 213, in fitness
+    m = self._merge_with_params(s, alphas)
+  File "/Users/bibo/Desktop/cs_dev/Ex30_HetMerge/pcma.py", line 159, in _merge_with_params
+    merged_params.append(a * b_a + (1 - a) * b_b_m)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

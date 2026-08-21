@@ -1,0 +1,61 @@
+======================================================================
+  E23: Evolutionary Neuro-Transplantation (ENT)
+======================================================================
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Same 128/64: A=[784, 128, 64, 10] B=[784, 128, 64, 10]
+  A: 0.495 [0.97, 0.97, 0.87, 0.94, 0.96, 0.0, 0.0, 0.0, 0.0, 0.0]
+  B: 0.405 [0.0, 0.0, 0.0, 0.0, 0.0, 0.8, 0.96, 0.85, 0.79, 0.88]
+
+  ENT evolving (pop=30, gen=40)...
+    Gen   0: best=0.7602 avg_neurons=266/384 (69%)
+    Gen  10: best=0.7882 avg_neurons=260/384 (68%)
+    Gen  20: best=0.7882 avg_neurons=248/384 (65%)
+    Gen  30: best=0.7910 avg_neurons=256/384 (67%)
+    Gen  39: best=0.7910 avg_neurons=255/384 (66%)
+
+  ENT Result:
+    Overall: 0.742  A=0.861  B=0.610  bal=0.708
+    Architecture: [784, 183, 102, 10]
+    Neurons: 285/384 (74%)
+    A kept: [90, 53], B kept: [93, 49]
+    Routing: [np.float64(0.75), np.float64(0.87), np.float64(0.85), np.float64(0.89), np.float64(0.87), np.float64(0.11), np.float64(0.18), np.float64(0.11), np.float64(0.11), np.float64(0.09)]
+    Params: 163,453
+      0: par=0.966 ent=0.880 ret=0.911 ✅
+      1: par=0.970 ent=0.940 ret=0.969 ✅
+      2: par=0.868 ent=0.753 ret=0.868 ✅
+      3: par=0.942 ent=0.865 ret=0.918 ✅
+      4: par=0.963 ent=0.866 ret=0.900 ✅
+      5: par=0.799 ent=0.402 ret=0.503 🟡
+      6: par=0.961 ent=0.837 ret=0.871 ✅
+      7: par=0.849 ent=0.610 ret=0.718 ✅
+      8: par=0.786 ent=0.766 ret=0.974 ✅
+      9: par=0.876 ent=0.433 ret=0.494 🟡
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Het 64/32 vs 192/96: A=[784, 64, 32, 10] B=[784, 192, 96, 10]
+  A: 0.469 [0.91, 0.96, 0.72, 0.93, 0.94, 0.0, 0.0, 0.0, 0.0, 0.0]
+  B: 0.394 [0.0, 0.0, 0.0, 0.0, 0.0, 0.73, 0.93, 0.76, 0.83, 0.91]
+
+  ENT evolving (pop=30, gen=40)...
+    Gen   0: best=0.6546 avg_neurons=268/384 (70%)
+Traceback (most recent call last):
+  File "/Users/bibo/Desktop/cs_dev/Ex30_HetMerge/e23_ent.py", line 486, in <module>
+    main()
+    ~~~~^^
+  File "/Users/bibo/Desktop/cs_dev/Ex30_HetMerge/e23_ent.py", line 425, in main
+    best_chrom, best_fit = ent_evolve(mA, mB, X_val, y_val, X_cal,
+                           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                       pop_size=30, n_gen=40)
+                                       ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bibo/Desktop/cs_dev/Ex30_HetMerge/e23_ent.py", line 338, in ent_evolve
+    fitnesses = [fitness(c) for c in population]
+                 ~~~~~~~^^^
+  File "/Users/bibo/Desktop/cs_dev/Ex30_HetMerge/e23_ent.py", line 289, in fitness
+    model = build_model_from_chromosome(chrom, WA, WB, rA, rB)
+  File "/Users/bibo/Desktop/cs_dev/Ex30_HetMerge/e23_ent.py", line 166, in build_model_from_chromosome
+    nB = int(chrom.masks_B[i].sum())
+             ~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/bibo/Desktop/cs_dev/.venv/lib/python3.14/site-packages/numpy/_core/_methods.py", line 49, in _sum
+    return umr_sum(a, axis, dtype, out, keepdims, initial, where)
+KeyboardInterrupt

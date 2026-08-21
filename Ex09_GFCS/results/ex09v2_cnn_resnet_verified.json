@@ -1,0 +1,43 @@
+{
+  "experiment": "Ex09v2 Part 2 — CNN & ResNet Fair Comparison",
+  "note": "Both GFCS and EAIB reimplemented from scratch in one file (verify_ex09v2.py). No dynamic imports.",
+  "pipeline": "Pretrained → TESA-26 iter60 @ 95% sparsity → compress → micro_finetune_compact(25 batches) → eval_f1",
+  "dataset": "FashionMNIST",
+  "results": [
+    {
+      "arch": "cnn", "seed": 42,
+      "teacher_f1": 0.8715, "teacher_params": 421642, "sparse_f1": 0.8206,
+      "gfcs": {"f1_pre": 0.8118, "f1_post": 0.8561, "rpr": 0.9823, "comp": 3.7, "params": 112698, "time_ms": 19},
+      "eaib": {"f1_pre": 0.6588, "f1_post": 0.8184, "rpr": 0.9390, "comp": 9.1, "params": 46484,  "time_ms": 70}
+    },
+    {
+      "arch": "cnn", "seed": 123,
+      "teacher_f1": 0.8863, "teacher_params": 421642, "sparse_f1": 0.6149,
+      "gfcs": {"f1_pre": 0.6148, "f1_post": 0.8419, "rpr": 0.9499, "comp": 3.3, "params": 129389, "time_ms": 17},
+      "eaib": {"f1_pre": 0.5984, "f1_post": 0.7902, "rpr": 0.8915, "comp": 6.0, "params": 70578,  "time_ms": 69}
+    },
+    {
+      "arch": "resnet", "seed": 42,
+      "teacher_f1": 0.8933, "teacher_params": 914122, "sparse_f1": 0.8417,
+      "gfcs": {"f1_pre": 0.3998, "f1_post": 0.8576, "rpr": 0.9600, "comp": 2.2, "params": 416129, "time_ms": 32},
+      "eaib": {"f1_pre": 0.1228, "f1_post": 0.8341, "rpr": 0.9337, "comp": 2.1, "params": 436355, "time_ms": 42}
+    },
+    {
+      "arch": "resnet", "seed": 123,
+      "teacher_f1": 0.8998, "teacher_params": 914122, "sparse_f1": 0.5419,
+      "gfcs": {"f1_pre": 0.2591, "f1_post": 0.8274, "rpr": 0.9196, "comp": 4.6, "params": 200397, "time_ms": 26},
+      "eaib": {"f1_pre": 0.1053, "f1_post": 0.7092, "rpr": 0.7883, "comp": 10.5, "params": 87031, "time_ms": 39}
+    }
+  ],
+  "summary": {
+    "cnn_mean": {
+      "gfcs": {"f1": 0.8490, "rpr": 0.9661, "comp": 3.5, "params": 121044, "time_ms": 18},
+      "eaib": {"f1": 0.8043, "rpr": 0.9153, "comp": 7.6, "params": 58531,  "time_ms": 70}
+    },
+    "resnet_mean": {
+      "gfcs": {"f1": 0.8425, "rpr": 0.9398, "comp": 3.4, "params": 308263, "time_ms": 29},
+      "eaib": {"f1": 0.7717, "rpr": 0.8610, "comp": 6.3, "params": 261693, "time_ms": 41}
+    }
+  },
+  "conclusion": "GFCS is strictly better in quality (RPR) on both architectures: +5.1% on CNN, +7.9% on ResNet. EAIB compresses more aggressively but with significant quality loss. Previous results showing EAIB dominating GFCS were due to a broken dynamic import of explore00/experiment.py."
+}

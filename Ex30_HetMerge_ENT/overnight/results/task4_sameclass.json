@@ -1,0 +1,278 @@
+{
+  "same-data": {
+    "42": {
+      "Average": {
+        "name": "Average",
+        "acc": 0.5545,
+        "mean_target": 0.5438,
+        "min": 0.0927,
+        "ok": 7
+      },
+      "TIES": {
+        "name": "TIES(d=0.3)",
+        "acc": 0.2725,
+        "mean_target": 0.2842,
+        "min": 0.0,
+        "ok": 3
+      },
+      "ENT": {
+        "name": "ENT",
+        "acc": 0.807,
+        "mean_target": 0.8041,
+        "min": 0.7079,
+        "ok": 10
+      },
+      "BestParent": {
+        "name": "ParentA",
+        "acc": 0.8145,
+        "mean_target": 0.8136,
+        "min": 0.6875,
+        "ok": 10
+      }
+    },
+    "123": {
+      "Average": {
+        "name": "Average",
+        "acc": 0.6435,
+        "mean_target": 0.6501,
+        "min": 0.1495,
+        "ok": 9
+      },
+      "TIES": {
+        "name": "TIES(d=0.3)",
+        "acc": 0.38,
+        "mean_target": 0.354,
+        "min": 0.0,
+        "ok": 4
+      },
+      "ENT": {
+        "name": "ENT",
+        "acc": 0.8055,
+        "mean_target": 0.8054,
+        "min": 0.6615,
+        "ok": 10
+      },
+      "BestParent": {
+        "name": "ParentB",
+        "acc": 0.821,
+        "mean_target": 0.8191,
+        "min": 0.6823,
+        "ok": 10
+      }
+    },
+    "456": {
+      "Average": {
+        "name": "Average",
+        "acc": 0.5935,
+        "mean_target": 0.5735,
+        "min": 0.0343,
+        "ok": 9
+      },
+      "TIES": {
+        "name": "TIES(d=0.3)",
+        "acc": 0.514,
+        "mean_target": 0.4995,
+        "min": 0.0,
+        "ok": 6
+      },
+      "ENT": {
+        "name": "ENT",
+        "acc": 0.8095,
+        "mean_target": 0.8096,
+        "min": 0.6667,
+        "ok": 10
+      },
+      "BestParent": {
+        "name": "ParentA",
+        "acc": 0.8225,
+        "mean_target": 0.8201,
+        "min": 0.6983,
+        "ok": 10
+      }
+    }
+  },
+  "overlapping": {
+    "42": {
+      "Average": {
+        "name": "Average",
+        "acc": 0.194,
+        "mean_target": 0.1961,
+        "min": 0.0,
+        "ok": 2
+      },
+      "TIES": {
+        "name": "TIES(d=0.3)",
+        "acc": 0.1565,
+        "mean_target": 0.1723,
+        "min": 0.0,
+        "ok": 2
+      },
+      "ENT": {
+        "name": "ENT",
+        "acc": 0.7425,
+        "mean_target": 0.742,
+        "min": 0.5853,
+        "ok": 10
+      },
+      "BestParent": {
+        "name": "ParentA",
+        "acc": 0.63,
+        "mean_target": 0.6245,
+        "min": 0.0,
+        "ok": 7
+      }
+    },
+    "123": {
+      "Average": {
+        "name": "Average",
+        "acc": 0.245,
+        "mean_target": 0.2585,
+        "min": 0.0,
+        "ok": 3
+      },
+      "TIES": {
+        "name": "TIES(d=0.1)",
+        "acc": 0.138,
+        "mean_target": 0.1195,
+        "min": 0.0,
+        "ok": 1
+      },
+      "ENT": {
+        "name": "ENT",
+        "acc": 0.727,
+        "mean_target": 0.7281,
+        "min": 0.4585,
+        "ok": 10
+      },
+      "BestParent": {
+        "name": "ParentA",
+        "acc": 0.611,
+        "mean_target": 0.6036,
+        "min": 0.0,
+        "ok": 7
+      }
+    },
+    "456": {
+      "Average": {
+        "name": "Average",
+        "acc": 0.2505,
+        "mean_target": 0.2596,
+        "min": 0.0,
+        "ok": 3
+      },
+      "TIES": {
+        "name": "TIES(d=0.3)",
+        "acc": 0.2615,
+        "mean_target": 0.2725,
+        "min": 0.0,
+        "ok": 3
+      },
+      "ENT": {
+        "name": "ENT",
+        "acc": 0.712,
+        "mean_target": 0.7122,
+        "min": 0.4271,
+        "ok": 10
+      },
+      "BestParent": {
+        "name": "ParentA",
+        "acc": 0.6015,
+        "mean_target": 0.5944,
+        "min": 0.0,
+        "ok": 7
+      }
+    }
+  },
+  "imbalanced": {
+    "42": {
+      "Average": {
+        "name": "Average",
+        "acc": 0.2705,
+        "mean_target": 0.2836,
+        "min": 0.0,
+        "ok": 4
+      },
+      "TIES": {
+        "name": "TIES(d=0.3)",
+        "acc": 0.2605,
+        "mean_target": 0.269,
+        "min": 0.0,
+        "ok": 3
+      },
+      "ENT": {
+        "name": "ENT",
+        "acc": 0.689,
+        "mean_target": 0.6835,
+        "min": 0.2402,
+        "ok": 9
+      },
+      "BestParent": {
+        "name": "ParentB",
+        "acc": 0.55,
+        "mean_target": 0.5611,
+        "min": 0.0,
+        "ok": 7
+      }
+    },
+    "123": {
+      "Average": {
+        "name": "Average",
+        "acc": 0.184,
+        "mean_target": 0.1729,
+        "min": 0.0,
+        "ok": 3
+      },
+      "TIES": {
+        "name": "TIES(d=0.3)",
+        "acc": 0.173,
+        "mean_target": 0.1584,
+        "min": 0.0,
+        "ok": 2
+      },
+      "ENT": {
+        "name": "ENT",
+        "acc": 0.6965,
+        "mean_target": 0.6975,
+        "min": 0.4637,
+        "ok": 10
+      },
+      "BestParent": {
+        "name": "ParentB",
+        "acc": 0.5455,
+        "mean_target": 0.5557,
+        "min": 0.0,
+        "ok": 7
+      }
+    },
+    "456": {
+      "Average": {
+        "name": "Average",
+        "acc": 0.2985,
+        "mean_target": 0.2852,
+        "min": 0.0,
+        "ok": 3
+      },
+      "TIES": {
+        "name": "TIES(d=0.3)",
+        "acc": 0.1235,
+        "mean_target": 0.116,
+        "min": 0.0,
+        "ok": 1
+      },
+      "ENT": {
+        "name": "ENT",
+        "acc": 0.6145,
+        "mean_target": 0.6095,
+        "min": 0.4022,
+        "ok": 10
+      },
+      "BestParent": {
+        "name": "ParentB",
+        "acc": 0.5345,
+        "mean_target": 0.543,
+        "min": 0.0,
+        "ok": 7
+      }
+    }
+  }
+}

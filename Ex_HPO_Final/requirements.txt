@@ -1,0 +1,26 @@
+# Залежності для відтворення бенчмарку Ex_HPO_Final.
+# Версії — ті, з якими фактично рахувались опубліковані результати.
+# Пакети без версії (cmaes, Orange3) — точна версія білда не зафіксована,
+# але API, що використовується (cmaes.CMA, Orange.evaluation.graph_ranks),
+# стабільний для актуальних релізів.
+
+numpy==2.4.4
+scipy==1.17.0
+pandas==2.3.3
+matplotlib==3.10.8
+seaborn==0.13.2
+scikit-learn==1.8.0
+scikit-posthocs==0.12.0
+ConfigSpace==0.6.1
+optuna==4.7.0
+cma==4.4.2
+cmaes
+Orange3
+torch==2.10.0
+torchvision==0.25.0
+tqdm==4.67.3
+yahpo_gym==1.0.2
+
+# FCNet табличний бенчмарк (Klein & Hutter, 2019) — дає модуль tabular_benchmarks,
+# потрібен для benchmark/fcnet_adapter.py (тір L5_FCNET).
+nas_benchmarks @ git+https://github.com/automl/nas_benchmarks.git@1b09906ba3f522f15766b75643423acccd9db3a5

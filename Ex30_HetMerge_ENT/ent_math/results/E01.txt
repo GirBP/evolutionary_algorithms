@@ -1,0 +1,62 @@
+============================================================
+  HARNESS GATE CHECK — lean-k v5.1K
+============================================================
+  Metrics: 0 experiments logged
+  Consecutive fails: 0
+  Next E_id: E01
+------------------------------------------------------------
+  ✅ PASS  §K11.1 plan.md current: OK
+  ✅ PASS  §K11.2 branches updated: no tested branches yet
+  ✅ PASS  §K11.3 consecutive fails: OK (0 consecutive fails, threshold=3)
+  ✅ PASS  §K11.4 program.md reread: OK
+  ✅ PASS  §K11.5 MPS GPU: OK
+  ✅ PASS  §K11.6 ITER_SUMMARY: OK
+============================================================
+
+✅ All checks passed. Running: h1_feature_align.py 
+============================================================
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/torchvision/datasets/cifar.py:83: VisibleDeprecationWarning: dtype(): align should be passed as Python or NumPy boolean but got `align=0`. Did you mean to pass a tuple to create a subarray type? (Deprecated NumPy 2.4)
+  entry = pickle.load(f, encoding="latin1")
+Parents loaded (1.6s): A={0: 0.8989999890327454, 1: 0.9509999752044678} B={2: 0.7390000224113464, 3: 0.871999979019165}
+Features: G_A=torch.Size([5000, 16]) G_B=torch.Size([5000, 16])
+Alignment T: shape=torch.Size([16, 16]), R²=0.9343 recon_err=0.0917
+
+  H1: Feature Align (T=ridge, g_A backbone):
+  Class |   Parent |   Merged |   Drop% | Retained?
+  ------+----------+----------+---------+----------
+      0 |    0.899 |    0.000 |  100.0% | ❌
+      1 |    0.951 |    0.000 |  100.0% | ❌
+      2 |    0.739 |    1.000 |  -35.3% | ✅
+      3 |    0.872 |    0.000 |  100.0% | ❌
+  Retention: 1/4 (drop ≤ 10%)
+
+  H1: Feature Align (T=ridge, g_B backbone):
+  Class |   Parent |   Merged |   Drop% | Retained?
+  ------+----------+----------+---------+----------
+      0 |    0.899 |    0.000 |  100.0% | ❌
+      1 |    0.951 |    0.999 |   -5.0% | ✅
+      2 |    0.739 |    0.062 |   91.6% | ❌
+      3 |    0.872 |    0.003 |   99.7% | ❌
+  Retention: 1/4 (drop ≤ 10%)
+
+  H1: Ensemble (g_A + g_B):
+  Class |   Parent |   Merged |   Drop% | Retained?
+  ------+----------+----------+---------+----------
+      0 |    0.899 |    0.000 |  100.0% | ❌
+      1 |    0.951 |    0.017 |   98.2% | ❌
+      2 |    0.739 |    0.998 |  -35.0% | ✅
+      3 |    0.872 |    0.000 |  100.0% | ❌
+  Retention: 1/4 (drop ≤ 10%)
+
+  R² (G_B ≈ G_A·T): 1.0000
+  Time: 9.2s
+
+metric_h1_gA_retained: 1
+metric_h1_gB_retained: 1
+metric_h1_ensemble_retained: 1
+metric_h1_best: 1
+
+🟢 H1 PASS: retention=1/4. Proceed to optimize.
+Done!
+
+📊 POST-RUN: Retention: 1/4 — gate passed

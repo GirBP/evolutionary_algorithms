@@ -1,0 +1,131 @@
+[
+  {
+    "depth": 3,
+    "seed": 42,
+    "accA_test": 0.9442,
+    "accB_test": 0.9534,
+    "best_parent": 0.9534,
+    "trunc_ret": 0.9014,
+    "proc_ret": 0.4856,
+    "pcma_ret": 0.9822,
+    "pcma_val": 0.9506,
+    "pcma_test": 0.9364,
+    "gen_gap": 0.0142,
+    "alphas": [
+      0.831,
+      0.761,
+      0.884
+    ],
+    "avg_alpha": 0.825,
+    "mixing_ok": false,
+    "dims": 195
+  },
+  {
+    "depth": 3,
+    "seed": 123,
+    "accA_test": 0.9474,
+    "accB_test": 0.9536,
+    "best_parent": 0.9536,
+    "trunc_ret": 0.7867,
+    "proc_ret": 0.5545,
+    "pcma_ret": 0.9948,
+    "pcma_val": 0.9556,
+    "pcma_test": 0.9486,
+    "gen_gap": 0.007,
+    "alphas": [
+      0.828,
+      0.815,
+      0.723
+    ],
+    "avg_alpha": 0.788,
+    "mixing_ok": false,
+    "dims": 195
+  },
+  {
+    "depth": 3,
+    "seed": 777,
+    "accA_test": 0.943,
+    "accB_test": 0.9598,
+    "best_parent": 0.9598,
+    "trunc_ret": 0.6924,
+    "proc_ret": 0.4799,
+    "pcma_ret": 0.9817,
+    "pcma_val": 0.9544,
+    "pcma_test": 0.9422,
+    "gen_gap": 0.0122,
+    "alphas": [
+      0.815,
+      0.844,
+      0.889
+    ],
+    "avg_alpha": 0.849,
+    "mixing_ok": false,
+    "dims": 195
+  },
+  {
+    "depth": 4,
+    "seed": 42,
+    "accA_test": 0.9428,
+    "accB_test": 0.9506,
+    "best_parent": 0.9506,
+    "trunc_ret": 0.5039,
+    "proc_ret": 0.3547,
+    "pcma_ret": 0.9907,
+    "pcma_val": 0.9502,
+    "pcma_test": 0.9418,
+    "gen_gap": 0.0084,
+    "alphas": [
+      0.889,
+      0.725,
+      0.869,
+      0.899
+    ],
+    "avg_alpha": 0.845,
+    "mixing_ok": false,
+    "dims": 228
+  },
+  {
+    "depth": 4,
+    "seed": 123,
+    "accA_test": 0.9428,
+    "accB_test": 0.9552,
+    "best_parent": 0.9552,
+    "trunc_ret": 0.7521,
+    "proc_ret": 0.432,
+    "pcma_ret": 0.9866,
+    "pcma_val": 0.953,
+    "pcma_test": 0.9424,
+    "gen_gap": 0.0106,
+    "alphas": [
+      0.893,
+      0.831,
+      0.786,
+      0.773
+    ],
+    "avg_alpha": 0.821,
+    "mixing_ok": false,
+    "dims": 228
+  },
+  {
+    "depth": 4,
+    "seed": 777,
+    "accA_test": 0.9468,
+    "accB_test": 0.9544,
+    "best_parent": 0.9544,
+    "trunc_ret": 0.7175,
+    "proc_ret": 0.2295,
+    "pcma_ret": 0.9908,
+    "pcma_val": 0.9542,
+    "pcma_test": 0.9456,
+    "gen_gap": 0.0086,
+    "alphas": [
+      0.89,
+      0.875,
+      0.858,
+      0.805
+    ],
+    "avg_alpha": 0.857,
+    "mixing_ok": false,
+    "dims": 228
+  }
+]

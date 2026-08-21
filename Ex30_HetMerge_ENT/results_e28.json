@@ -1,0 +1,34 @@
+[
+  {
+    "name": "MLP+MLP",
+    "acc": 0.738,
+    "bal": 0.663,
+    "ok": 10,
+    "projA": "LSQ",
+    "projB": "LSQ"
+  },
+  {
+    "name": "CNN+CNN",
+    "acc": 0.522,
+    "bal": 0.9636,
+    "ok": 8,
+    "projA": "LSQ",
+    "projB": "LSQ"
+  },
+  {
+    "name": "MLP+CNN",
+    "acc": 0.5045,
+    "bal": 0.4744,
+    "ok": 8,
+    "projA": "RFF-0.05",
+    "projB": "SVD-16"
+  },
+  {
+    "name": "CNN+MLP",
+    "acc": 0.4915,
+    "bal": 0.9939,
+    "ok": 9,
+    "projA": "Direct-CNN",
+    "projB": "RFF-0.05"
+  }
+]

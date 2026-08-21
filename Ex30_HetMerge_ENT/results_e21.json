@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Same arch",
+    "teacher_acc": 0.717,
+    "student_acc": 0.6925,
+    "A": 0.8878,
+    "B": 0.4804,
+    "balance": 0.5411,
+    "teacher_params": 235146,
+    "student_params": 109386,
+    "student_arch": "[784, 128, 64, 10]"
+  },
+  {
+    "name": "Het 2x",
+    "teacher_acc": 0.662,
+    "student_acc": 0.6285,
+    "A": 0.6754,
+    "B": 0.5821,
+    "balance": 0.8618,
+    "teacher_params": 235146,
+    "student_params": 109386,
+    "student_arch": "[784, 128, 64, 10]"
+  },
+  {
+    "name": "Het 4x",
+    "teacher_acc": 0.633,
+    "student_acc": 0.607,
+    "A": 0.7465,
+    "B": 0.462,
+    "balance": 0.619,
+    "teacher_params": 139290,
+    "student_params": 66450,
+    "student_arch": "[784, 80, 40, 10]"
+  }
+]
